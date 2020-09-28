@@ -1,0 +1,59 @@
+1) Qual sua faixa etária?
+a. Abaixo de 25 anos
+b. 25 até 40 anos
+c. 41 até 55 anos
+d. Acima de 56 anos
+
+2) Qual Percentual do seu patrimônio está investido?(Carros, casa, ações, etc)
+a. Até 25%      
+b. Entre 26% e 50%
+c. Entre 51% e 75%
+d. Mais de 76% 
+
+3) Qual o objetivo dos seus investimentos?
+a. Aposentadoria  
+b. Compra de um bem                                       
+c. Proteção do capital
+d. Crescimento significativo do patrimônio                            
+ 
+4) Como você se sentiria caso verificasse perdas em seus investimentos? 
+a. Extremamente desanimado. Não quero passar nunca por essa situação
+b. Moderadamente desanimado. Posso passar por essa situação, mas não gostaria
+c. Levemente desanimado. Entendo que a perda faz parte do processo de investimento
+d. Normal. Tudo bem passar por isso
+
+5) Quais são as aplicações financeiras em que você tem experiência?
+a. Não Possuo
+b. Renda Fixa
+c. Renda Fixa e Ações de Longo Prazo
+d. Outras além das anteriores
+
+6) Possui algum conhecimento sobre o mercado financeiro?
+a. Não
+b. Pouco
+c. Médio
+d. Bastante
+
+7) Qual sua escoladidade?
+a. Ensino fundamental ou inferior
+b. Ensino Médio 
+c. Ensino Superior
+d. Maior que Ensino Superior
+
+8) Você costuma operar financeiramente com que frequência?
+a. Pouquíssima
+b. Pouco
+c. Média
+d. Alta
+
+9) Você espera precisar de renda extra no futuro?
+a. Não. Pretendo diminuir
+b. Não. Pretendo ter as mesmas que tenho hoje
+c. Sim. Pretendo aumentar 
+d. Sim. Pretendo ter um grande aumento
+
+10) Qual o tempo disponível que você tem para manter seu dinheiro aplicado? 
+a. Menos de 1 ano
+b. De 1 até 2 anos
+c. De 2 até 3 anos
+d. Mais de 3 anos 
