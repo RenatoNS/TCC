@@ -3,6 +3,143 @@ import wx.xrc
 import pandas as pd
 import numpy as np
 import csv
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+import matplotlib.pyplot as plt
+from PyQt5.QtWidgets import QLineEdit, QSlider, QMainWindow, QApplication, QPushButton, QVBoxLayout
+import sys
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+import numpy as np
+from PyQt5.QtCore import Qt
+import Perfil
+
+z = -1
+
+class Window(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        title = "Investimentos"
+        top = 500
+        left = 500
+        width = 900
+        height = 500
+
+        self.setWindowTitle(title)
+        self.setGeometry(top, left, width, height)
+
+        self.MyUI()
+
+    def MyUI(self):
+        canvas = Canvas(self, width=8, height=4)
+        canvas.move(200, 0)
+
+        button = QPushButton("Pesquisar Ofertas", self)
+        button.move(20, 450)
+        button2 = QPushButton("Atualizar", self)
+        button2.move(20, 350)
+        self.button3 = QPushButton("Retornar ao Padrão", self)
+        self.button3.move(120, 350)
+        self.le1 = QLineEdit(self)
+        self.le1.move(20, 50)
+        self.le1.setText("30")
+        self.le2 = QLineEdit(self)
+        self.le2.move(20, 150)
+        self.le2.setText("40")
+        self.le3 = QLineEdit(self)
+        self.le3.move(20, 250)
+        self.le3.setText("30")
+        self.s1 = QSlider(Qt.Horizontal, self)
+        self.s1.move(20,300)
+        self.s2 = QSlider(Qt.Horizontal, self)
+        self.s2.move(20,200)
+        self.s3 = QSlider(Qt.Horizontal, self)
+        self.s3.move(20,100)
+        self.s1.setMinimum(0)
+        self.s1.setMaximum(100)
+        self.s2.setMinimum(0)
+        self.s2.setMaximum(100)
+        self.s3.setMinimum(0)
+        self.s3.setMaximum(100)
+        self.s1.valueChanged.connect(self.v_change1)
+        self.s2.valueChanged.connect(self.v_change2)
+        self.s3.valueChanged.connect(self.v_change3)
+        self.button3.clicked.connect(self.clickAtualizar)
+
+    def v_change1(self):
+        my_value = str(self.s1.value())
+        self.le3.setText(my_value)
+
+    def v_change2(self):
+        my_value = str(self.s2.value())
+        self.le2.setText(my_value)
+
+    def v_change3(self):
+        my_value = str(self.s3.value())
+        self.le1.setText(my_value)
+
+    def clickAtualizar(self):
+        pass
+
+    def clickPadrao(self):
+        pass
+
+    def clickOfertas(self):
+        pass
+
+class Canvas(FigureCanvas):
+    def __init__(self, parent=None, width=5, height=5, dpi=100):
+        fig = Figure(figsize=(width, height), dpi=dpi)
+        self.axes = fig.add_subplot(111)
+
+        FigureCanvas.__init__(self, fig)
+        self.setParent(parent)
+
+        self.plot(20,50,30)
+
+    def plot(self,RF,TD,AC):
+        x = np.array([RF, TD, AC])
+        labels = ["Renda Fixa", "Tesouro Direto", "Ações"]
+        ax = self.figure.add_subplot(111)
+        ax.pie(x, labels=labels)
+
+class LeftPanel(wx.Panel):
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent, -1, size=(50, 50))
+
+        self.figure = Figure()
+
+        labels = 'Renda Fixa', 'Tesouro Direto', 'Renda Variável'
+        sizes = [15, 35, 50]
+        explode = (0, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+        fig1, ax1 = plt.subplots()
+        ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+                shadow=True, startangle=90)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+        plt.show()
+        self.canvas = FigureCanvas(self, -1, self.figure)
+
+
+class RightPanel(wx.Panel):
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent, -1)
+
+        self.m_button4 = wx.Button(self, -1, "button")
+
+
+class MainFrame(wx.Frame):
+    def __init__(self):
+        wx.Frame.__init__(self, parent=None)
+
+        splitter = wx.SplitterWindow(self)
+        left = LeftPanel(splitter)
+        right = RightPanel(splitter)
+        splitter.SplitHorizontally(left, right)
+
+
 class MyFrame1(wx.Frame):
 
     def __init__(self, parent):
@@ -162,7 +299,7 @@ class MyFrame1(wx.Frame):
 
     # Virtual event handlers, overide them in your derived class
     def save(self, event):
-        x = [self.m_comboBox11.GetSelection(),
+        opiniao = [self.m_comboBox11.GetSelection(),
              self.m_comboBox12.GetSelection(),
              self.m_comboBox13.GetSelection(),
              self.m_comboBox14.GetSelection(),
@@ -173,29 +310,36 @@ class MyFrame1(wx.Frame):
              self.m_comboBox19.GetSelection(),
              self.m_comboBox20.GetSelection()]
         y = np.array([self.m_comboBox11.GetValue(),
-             self.m_comboBox12.GetValue(),
-             self.m_comboBox13.GetValue(),
-             self.m_comboBox14.GetValue(),
-             self.m_comboBox15.GetValue(),
-             self.m_comboBox16.GetValue(),
-             self.m_comboBox17.GetValue(),
-             self.m_comboBox18.GetValue(),
-             self.m_comboBox19.GetValue(),
-             self.m_comboBox20.GetValue()
-             ])
+                      self.m_comboBox12.GetValue(),
+                      self.m_comboBox13.GetValue(),
+                      self.m_comboBox14.GetValue(),
+                      self.m_comboBox15.GetValue(),
+                      self.m_comboBox16.GetValue(),
+                      self.m_comboBox17.GetValue(),
+                      self.m_comboBox18.GetValue(),
+                      self.m_comboBox19.GetValue(),
+                      self.m_comboBox20.GetValue()
+                      ])
         df = pd.DataFrame(y)
-        with open("questionarios.csv", 'w', newline='') as saida:
-            escrever = csv.writer(saida)
-            for i in range(1,10):
-                escrever.writerow(df)
-        print(x)
-        print(y)
+        opiniao.sort()
+        if (opiniao[4] == 0):
+            perfil = "Conservador"
+        elif (opiniao[4] == 1):
+            perfil = "Conservador"
+        elif (opiniao[4] == 2):
+            perfil = "Moderado"
+        else:
+            perfil = "Agressivo"
+        print(perfil)
+        frame.Close()
         event.Skip()
-
 
 app = wx.App()
 frame = MyFrame1(None)
 frame.Show()
-
 app.MainLoop()
-
+if (z==-1):
+    app = QApplication(sys.argv)
+    window = Window()
+    window.show()
+    app.exec()
