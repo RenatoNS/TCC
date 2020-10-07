@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="close_image">
+    <file>cil-x.png</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>logo_360x90_-removebg-preview.png</file>
+  </qresource>
+  <qresource prefix="icone_janela">
+    <file>icone_janela.png</file>
+  </qresource>
+</RCC>

@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
+class Ui_MainWindow3(object):
     def __init__(self):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
 
@@ -200,15 +200,15 @@ class Ui_MainWindow(object):
 
     def clicked(self):
         opiniao = [self.comboBox.currentIndex(),
-                  self.comboBox_2.currentIndex(),
-                  self.comboBox_3.currentIndex(),
-                  self.comboBox_4.currentIndex(),
-                  self.comboBox_5.currentIndex(),
-                  self.comboBox_6.currentIndex(),
-                  self.comboBox_7.currentIndex(),
-                  self.comboBox_8.currentIndex(),
-                  self.comboBox_9.currentIndex(),
-                  self.comboBox_10.currentIndex()]
+                   self.comboBox_2.currentIndex(),
+                   self.comboBox_3.currentIndex(),
+                   self.comboBox_4.currentIndex(),
+                   self.comboBox_5.currentIndex(),
+                   self.comboBox_6.currentIndex(),
+                   self.comboBox_7.currentIndex(),
+                   self.comboBox_8.currentIndex(),
+                   self.comboBox_9.currentIndex(),
+                   self.comboBox_10.currentIndex()]
 
         y = np.array([self.comboBox.currentText(),
                       self.comboBox_2.currentText(),
@@ -232,12 +232,12 @@ class Ui_MainWindow(object):
         else:
             perfil = "Agressivo"
         print(perfil)
-
+        MainWindow.close()
 
 
 app = QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
-ui = Ui_MainWindow()
+ui = Ui_MainWindow3()
 ui.setupUi(MainWindow)
 MainWindow.show()
 app.exec_()
