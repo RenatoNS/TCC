@@ -1,3 +1,6 @@
 import formulario
 import Login
-import main
+
+if __name__ == "__main__":
+    Login.open_page()
+    formulario.open_page()
