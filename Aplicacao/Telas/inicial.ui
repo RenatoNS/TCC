@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow_login</class>
- <widget class="QMainWindow" name="MainWindow_login">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>917</width>
-    <height>804</height>
+    <width>992</width>
+    <height>831</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Login</string>
+   <string>Inicial</string>
   </property>
   <property name="windowIcon">
    <iconset resource="file_rc.qrc">
@@ -26,7 +26,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(42, 42, 42);</string>
   </property>
-  <widget class="QWidget" name="centralwidget_login">
+  <widget class="QWidget" name="centralwidget_inicial">
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -44,7 +44,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QFrame" name="conteudo_login">
+     <widget class="QFrame" name="conteudo_inicial">
       <property name="font">
        <font>
         <pointsize>11</pointsize>
@@ -61,7 +61,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QFrame" name="login_area">
+        <widget class="QFrame" name="inicial_area">
          <property name="maximumSize">
           <size>
            <width>450</width>
@@ -78,7 +78,7 @@ border-radius: 10px;</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QFrame" name="logo_login">
+         <widget class="QFrame" name="logo_inicial">
           <property name="geometry">
            <rect>
             <x>45</x>
@@ -105,95 +105,37 @@ background-position: center;</string>
            <enum>QFrame::Raised</enum>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_login_usuario">
+         <widget class="QLabel" name="label_inicial_bemVindo">
           <property name="geometry">
            <rect>
-            <x>85</x>
-            <y>200</y>
-            <width>280</width>
-            <height>55</height>
+            <x>40</x>
+            <y>220</y>
+            <width>370</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="font">
            <font>
             <family>Segoe UI</family>
             <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">QLineEdit{
-	color: rgb(0, 0, 0);
-	border: 2px solid rgb(250,250,250);
-	border-radius: 5px;
-	padding: 15px;
-	background-color: rgb(250, 250, 250);
-	color: rgb(0, 0, 0);
-}
-
-QLineEdit:hover{
-	border: 2px solid rgb(16, 5, 136);
-}
-
-QLineEdit:focus{
-	border: 2px solid rgb(16, 5, 136);
-	color: rgb(0, 0, 0);
-}</string>
+           <string notr="true">color: rgb(255, 255, 255);</string>
           </property>
-          <property name="frame">
-           <bool>true</bool>
-          </property>
-          <property name="placeholderText">
-           <string>Usuário</string>
+          <property name="text">
+           <string>Bem-vindo(a) a Money MS, você já possui cadastro? </string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_login_senha">
+         <widget class="QPushButton" name="btn_inicial_sim">
           <property name="geometry">
            <rect>
-            <x>85</x>
-            <y>280</y>
-            <width>280</width>
-            <height>55</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Segoe UI</family>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit{
-	color: rgb(0, 0, 0);
-	border: 2px solid rgb(250,250,250);
-	border-radius: 5px;
-	padding: 15px;
-	background-color: rgb(250, 250, 250);
-	color: rgb(0, 0, 0);
-}
-
-QLineEdit:hover{
-	border: 2px solid rgb(16, 5, 136);
-}
-
-QLineEdit:focus{
-	border: 2px solid rgb(16, 5, 136);
-	color: rgb(0, 0, 0);
-}</string>
-          </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
-          </property>
-          <property name="placeholderText">
-           <string>Senha</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="btn_login_conectar">
-          <property name="geometry">
-           <rect>
-            <x>85</x>
-            <y>400</y>
-            <width>280</width>
-            <height>50</height>
+            <x>50</x>
+            <y>340</y>
+            <width>120</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="font">
@@ -224,7 +166,47 @@ QPushButton:pressed{
 }</string>
           </property>
           <property name="text">
-           <string>Conectar</string>
+           <string>Sim</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_inicial_nao">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>340</y>
+            <width>120</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 170);
+	border: 2px solid rgb(180, 180, 180);
+	border-radius: 5px;
+}
+
+QPushButton:hover{
+	background-color: rgb(180, 180, 180);
+	border: 2px solid rgb(190, 190, 190);
+}
+
+QPushButton:pressed{
+	
+	background-color: rgb(16, 5, 136);
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <property name="text">
+           <string>Não</string>
           </property>
          </widget>
         </widget>
@@ -233,7 +215,7 @@ QPushButton:pressed{
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_bot_login">
+     <widget class="QFrame" name="inicial_frame_bot">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -258,7 +240,7 @@ QPushButton:pressed{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>917</width>
+     <width>992</width>
      <height>21</height>
     </rect>
    </property>

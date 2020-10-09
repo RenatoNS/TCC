@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow_login</class>
- <widget class="QMainWindow" name="MainWindow_login">
+ <class>MainWindow_cadastro</class>
+ <widget class="QMainWindow" name="MainWindow_cadastro">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>917</width>
-    <height>804</height>
+    <width>1104</width>
+    <height>879</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Login</string>
+   <string>Cadastro</string>
   </property>
   <property name="windowIcon">
    <iconset resource="file_rc.qrc">
@@ -26,7 +26,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(42, 42, 42);</string>
   </property>
-  <widget class="QWidget" name="centralwidget_login">
+  <widget class="QWidget" name="centralwidget_cadastro">
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -44,7 +44,43 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QFrame" name="conteudo_login">
+     <widget class="QFrame" name="frame_top_cadastro">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>5</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="conteudo_cadastro">
       <property name="font">
        <font>
         <pointsize>11</pointsize>
@@ -61,7 +97,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QFrame" name="login_area">
+        <widget class="QFrame" name="cadastro_area">
          <property name="maximumSize">
           <size>
            <width>450</width>
@@ -78,7 +114,7 @@ border-radius: 10px;</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QFrame" name="logo_login">
+         <widget class="QFrame" name="logo_cadastro">
           <property name="geometry">
            <rect>
             <x>45</x>
@@ -105,11 +141,11 @@ background-position: center;</string>
            <enum>QFrame::Raised</enum>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_login_usuario">
+         <widget class="QLineEdit" name="lineEdit_cadastro_usuario">
           <property name="geometry">
            <rect>
             <x>85</x>
-            <y>200</y>
+            <y>220</y>
             <width>280</width>
             <height>55</height>
            </rect>
@@ -146,11 +182,11 @@ QLineEdit:focus{
            <string>Usuário</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_login_senha">
+         <widget class="QLineEdit" name="lineEdit_cadastro_senha">
           <property name="geometry">
            <rect>
             <x>85</x>
-            <y>280</y>
+            <y>350</y>
             <width>280</width>
             <height>55</height>
            </rect>
@@ -187,11 +223,11 @@ QLineEdit:focus{
            <string>Senha</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="btn_login_conectar">
+         <widget class="QPushButton" name="btn_cadastro_cadastrar">
           <property name="geometry">
            <rect>
             <x>85</x>
-            <y>400</y>
+            <y>450</y>
             <width>280</width>
             <height>50</height>
            </rect>
@@ -224,7 +260,79 @@ QPushButton:pressed{
 }</string>
           </property>
           <property name="text">
-           <string>Conectar</string>
+           <string>Cadastrar</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_cadastro_usuario">
+          <property name="geometry">
+           <rect>
+            <x>85</x>
+            <y>190</y>
+            <width>280</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Crie seu nome de usuário</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_cadastro_senha">
+          <property name="geometry">
+           <rect>
+            <x>85</x>
+            <y>320</y>
+            <width>280</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Crie sua senha</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_cadastro">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>140</y>
+            <width>90</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Cadastro</string>
           </property>
          </widget>
         </widget>
@@ -233,7 +341,7 @@ QPushButton:pressed{
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_bot_login">
+     <widget class="QFrame" name="frame_bot_cadastro">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -258,7 +366,7 @@ QPushButton:pressed{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>917</width>
+     <width>1104</width>
      <height>21</height>
     </rect>
    </property>

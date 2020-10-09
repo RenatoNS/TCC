@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1217</width>
+    <height>881</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1100</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Formulário</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="file_rc.qrc">
+    <normaloff>:/icone_janela/icone_janela.png</normaloff>:/icone_janela/icone_janela.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(42, 42, 42);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget_formulario">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="conteudo_formulario">
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(42, 42, 42);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QFrame" name="formulario_area">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>1100</width>
+           <height>900</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(60, 60, 60);
+border-radius: 10px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QFrame" name="logo_formulario">
+          <property name="geometry">
+           <rect>
+            <x>405</x>
+            <y>10</y>
+            <width>360</width>
+            <height>90</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>360</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/logo/logo_360x90_-removebg-preview.png);
+background-repeat: no-repeat;
+background-position: center;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_formulario_cadastrar">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>730</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 170);
+	border: 2px solid rgb(180, 180, 180);
+	border-radius: 5px;
+}
+
+QPushButton:hover{
+	background-color: rgb(180, 180, 180);
+	border: 2px solid rgb(190, 190, 190);
+}
+
+QPushButton:pressed{
+	
+	background-color: rgb(16, 5, 136);
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <property name="text">
+           <string>Cadastrar</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="Q1_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>15</x>
+            <y>210</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Abaixo de 25 anos</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>25 até 40 anos</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>41 até 55 anos</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Acima de 56 anos</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q2_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>340</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Até 25%</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Entre 26% e 50%</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Entre 51% e 75%</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mais de 76%</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q3_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>470</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Aposentadoria</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Proteção do capital</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Compra de um bem</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Crescimento significativo do patrimônio</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q4_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>600</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Extremamente desanimado</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Moderadamente desanimado</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Levemente desanimado</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Normal</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q5_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>210</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Não possuo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Renda fixa</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Renda fixa e ações de longo prazo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Outras além das anteriores</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q6_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>340</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Não</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pouco</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Médio</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Bastante</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q7_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>470</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Ensino fundamental ou inferior</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ensino médio</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ensino superior</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Maior que ensino superior</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q8_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>600</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Pouquíssima</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pouca</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Média</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Alta</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q9_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>820</x>
+            <y>210</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Não. Pretendo diminuir</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Não. Pretendo manter as que tenho</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sim. Pretendo aumentar</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sim. Pretendo ter um grande aumento</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="Q10_comboBox">
+          <property name="geometry">
+           <rect>
+            <x>820</x>
+            <y>340</y>
+            <width>260</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(250,250,250);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:hover{
+	border: 2px solid rgb(16, 5, 136);
+}
+
+QComboBox:focus{
+	border: 2px solid rgb(16, 5, 136);
+	color: rgb(0, 0, 0);
+}
+
+QComboBox:pressed{
+	background-color: rgb(250, 250, 250);
+}
+
+QComboBox QListView{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Menos de 1 ano</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>De 1 até 2 anos</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>De 2 até 3 anos</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mais de 3 anos</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="Questao_1_label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>180</y>
+            <width>230</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Qual sua faixa etária?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_2_1_label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>290</y>
+            <width>251</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Qual percentual do seu patrimônio está</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_3_label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>440</y>
+            <width>261</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Qual o objetivo dos seus investimentos?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_4_1_label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>550</y>
+            <width>291</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Como você se sentiria caso verificasse perdas</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_5_1_label">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>160</y>
+            <width>321</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Quais são as aplicações financeiras</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_6_1_label">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>290</y>
+            <width>251</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Possui algum conhecimento sobre</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_7_label">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>440</y>
+            <width>181</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Qual sua escolaridade?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_8_1_label">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>550</y>
+            <width>241</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Você costuma operar financeiramente</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_9_1_label">
+          <property name="geometry">
+           <rect>
+            <x>820</x>
+            <y>160</y>
+            <width>281</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Você espera precisar de renda extra</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_10_1_label">
+          <property name="geometry">
+           <rect>
+            <x>820</x>
+            <y>290</y>
+            <width>221</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Qual o tempo disponível que você</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_2_2_label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>310</y>
+            <width>251</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>investido? (Carros, casas, ações, etc)</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_4_2_label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>570</y>
+            <width>251</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>em seus investimentos?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_5_2_label">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>180</y>
+            <width>261</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>em que você tem experiência?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_6_2_label">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>310</y>
+            <width>181</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>o mercado financeiro?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_8_2_label">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>570</y>
+            <width>221</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>com que frequência?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_9_2_label">
+          <property name="geometry">
+           <rect>
+            <x>820</x>
+            <y>180</y>
+            <width>231</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>no futuro?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Questao_10_2_label">
+          <property name="geometry">
+           <rect>
+            <x>820</x>
+            <y>310</y>
+            <width>261</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>tem para manter seu dinheiro aplicado?</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1217</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="file_rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>
