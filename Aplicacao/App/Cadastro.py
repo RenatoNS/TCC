@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Aplicacao.App.Fluxo import Fluxo
+from Fluxo import Fluxo
 
 
 class Ui_MainWindow(object):
@@ -199,10 +199,13 @@ class Ui_MainWindow(object):
         self.label_cadastro.setText(_translate("MainWindow", "Cadastro"))
 
     def click_cadastrar(self):
-        fluxo = Fluxo()
-        fluxo.window_formulario()
-        MainWindow.close()
+        if (True):
+            fluxo = Fluxo()
+            fluxo.window_formulario()
+            MainWindow.close()
+        if (False):
 
+            pass
 import files_rc
 import sys
 

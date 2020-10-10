@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Aplicacao.App.Fluxo import Fluxo
+from Fluxo import Fluxo
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):

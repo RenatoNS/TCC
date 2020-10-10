@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Aplicacao.App.Fluxo import Fluxo
+from Fluxo import Fluxo
 
 
 class Ui_MainWindow_valor_investimento(object):
