@@ -715,14 +715,13 @@ class Ui_MainWindow(object):
 
         checker = Conexao()
         if (checker.verificar_vazio()):
-                checker.criar_primeira_conta(respostas)
+                checker.criar_primeira_conta(respostas,perfil)
                 fluxo = Fluxo()
                 fluxo.window_valorinvestimentos()
                 MainWindow.close()
 
         else:
-                print("as")
-                checker.criar_conta(respostas)
+                checker.criar_conta(respostas,perfil)
                 fluxo = Fluxo()
                 fluxo.window_valorinvestimentos()
                 MainWindow.close()

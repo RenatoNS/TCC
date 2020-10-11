@@ -89,6 +89,7 @@ class Ui_MainWindow_valor_investimento(object):
         self.lineEdit_valor_investimento_valor.setFrame(True)
         self.lineEdit_valor_investimento_valor.setObjectName("lineEdit_valor_investimento_valor")
         self.btn_valor_investimento_ok = QtWidgets.QPushButton(self.valor_investimento_area)
+        self.btn_valor_investimento_ok.clicked.connect(self.pesquisar)
         self.btn_valor_investimento_ok.setGeometry(QtCore.QRect(85, 450, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -229,6 +230,9 @@ class Ui_MainWindow_valor_investimento(object):
         self.radioButton.setText(_translate("MainWindow_valor_investimento", "Dias"))
         self.radioButton_2.setText(_translate("MainWindow_valor_investimento", "Meses"))
         self.radioButton_3.setText(_translate("MainWindow_valor_investimento", "Anos"))
+
+    def pesquisar(self):
+        pass
 
 import files_rc
 import sys

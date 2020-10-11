@@ -23,12 +23,22 @@ class Conexao:
         else:
             return False
 
-    def criar_primeira_conta(self, respostas):
+    def criar_primeira_conta(self, respostas, respostas2):
         frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv', encoding='ansi', index_col=0)
         login = list(frame["login"])
         senha = list(frame["senha"])
+        respostas2.sort()
+        if (respostas2[4] == 0):
+            perfil = "Conservador"
+        elif (respostas2[4] == 1):
+            perfil = "Conservador"
+        elif (respostas2[4] == 2):
+            perfil = "Moderado"
+        else:
+            perfil = "Agressivo"
         respostas.append(login[0])
         respostas.append(senha[0])
+        respostas.append(perfil)
         informacoes = [respostas]
         columns = ["Qual sua faixa etária",
                    "Qual percentual do seu patrimônio está investido? (Carros, casas, ações, etc)",
@@ -41,18 +51,29 @@ class Conexao:
                    "Você espera precisar de renda extra no futuro?",
                    "Qual o tempo disponível que você tem para manter seu dinheiro aplicado?",
                    "Login",
-                   "Senha"]
+                   "Senha",
+                   "Perfil"]
         frame = pd.DataFrame(informacoes, columns=columns)
         frame.to_csv("Clientes.csv", sep=";", encoding='ansi')
         os.remove('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv')
 
-    def criar_conta(self, respostas):
+    def criar_conta(self, respostas, respostas2):
         framelogin = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv', encoding='ansi')
         frameclientes = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi', sep=";", index_col=0)
         login = list(framelogin["login"])
         senha = list(framelogin["senha"])
+        respostas2.sort()
+        if (respostas2[4] == 0):
+            perfil = "Conservador"
+        elif (respostas2[4] == 1):
+            perfil = "Conservador"
+        elif (respostas2[4] == 2):
+            perfil = "Moderado"
+        else:
+            perfil = "Agressivo"
         respostas.append(login[0])
         respostas.append(senha[0])
+        respostas.append(perfil)
         informacoes = [respostas]
         columns = ["Qual sua faixa etária",
                    "Qual percentual do seu patrimônio está investido? (Carros, casas, ações, etc)",
@@ -65,7 +86,8 @@ class Conexao:
                    "Você espera precisar de renda extra no futuro?",
                    "Qual o tempo disponível que você tem para manter seu dinheiro aplicado?",
                    "Login",
-                   "Senha"]
+                   "Senha",
+                   "Perfil"]
         frame = pd.DataFrame(informacoes, columns=columns)
         frame.to_csv("Clientes1.csv", sep=";", encoding='ansi')
         framelogin = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv', encoding='ansi', sep=";", index_col=0)
