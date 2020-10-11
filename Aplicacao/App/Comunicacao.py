@@ -16,7 +16,7 @@ class Conexao:
         frame.to_csv("Login_temp.csv", encoding='utf-8')
 
     def pesquisar_login(self,login):
-        frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='#ISO-8859-1')
+        frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi')
         a = list(frame['Login'])
         if(login in a):
             return True
@@ -24,7 +24,7 @@ class Conexao:
             return False
 
     def criar_primeira_conta(self, respostas):
-        frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv', encoding='#ISO-8859-1')
+        frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv', encoding='ansi', index_col=0)
         login = list(frame["login"])
         senha = list(frame["senha"])
         respostas.append(login[0])
@@ -44,14 +44,33 @@ class Conexao:
                    "Senha"]
         frame = pd.DataFrame(informacoes, columns=columns)
         frame.to_csv("Clientes.csv", sep=";", encoding='ansi')
+        os.remove('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv')
 
     def criar_conta(self, respostas):
-        frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='#ISO-8859-1')
-        frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv', encoding='#ISO-8859-1')
-        login = list(frame["login"])
-        senha = list(frame["senha"])
+        framelogin = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv', encoding='ansi')
+        frameclientes = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi', sep=";", index_col=0)
+        login = list(framelogin["login"])
+        senha = list(framelogin["senha"])
         respostas.append(login[0])
         respostas.append(senha[0])
         informacoes = [respostas]
-
+        columns = ["Qual sua faixa etária",
+                   "Qual percentual do seu patrimônio está investido? (Carros, casas, ações, etc)",
+                   "Qual o objetivo dos seus investimentos?",
+                   "Como você se sentiria caso verificasse perdas em seus investimentos?",
+                   "Quais são as aplicações financeiras em que você tem experiência?",
+                   "Possui algum conhecimento sobre o mercado financeiro?",
+                   "Qual sua escolaridade ?",
+                   "Você costuma operar financeiramente com que frequência?",
+                   "Você espera precisar de renda extra no futuro?",
+                   "Qual o tempo disponível que você tem para manter seu dinheiro aplicado?",
+                   "Login",
+                   "Senha"]
+        frame = pd.DataFrame(informacoes, columns=columns)
+        frame.to_csv("Clientes1.csv", sep=";", encoding='ansi')
+        framelogin = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv', encoding='ansi', sep=";", index_col=0)
+        frames = pd.concat([frameclientes, framelogin], ignore_index=True)
+        frames.to_csv("Clientes.csv", sep=";", encoding='ansi')
+        os.remove('C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv')
+        os.remove('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv')
 

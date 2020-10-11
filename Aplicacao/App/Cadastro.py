@@ -154,6 +154,7 @@ class Ui_MainWindow(object):
         self.label_cadastro_usuario.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_cadastro_usuario.setObjectName("label_cadastro_usuario")
         self.label_error = QtWidgets.QLabel(self.cadastro_area)
+        self.label_error1 = QtWidgets.QLabel(self.cadastro_area)
         self.label_cadastro_senha = QtWidgets.QLabel(self.cadastro_area)
         self.label_cadastro_senha.setGeometry(QtCore.QRect(85, 320, 280, 20))
         font = QtGui.QFont()
@@ -205,36 +206,37 @@ class Ui_MainWindow(object):
         self.label_error.setFont(QFont('Arial', 15))
         self.label_error.move(100, 410)
         self.label_error.setStyleSheet("QLabel { color: rgb(60,60,60)}")
-        self.label_error.setText("Login Existente")
-        self.label_error.setFont(QFont('Arial', 15))
-        self.label_error.move(100, 410)
-        self.label_error.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+        self.label_error1.setText("Login Existente")
+        self.label_error1.setFont(QFont('Arial', 15))
+        self.label_error1.move(160, 285)
+        self.label_error1.setStyleSheet("QLabel { color: rgb(60,60,60)}")
 
 
 
     def click_cadastrar(self):
         checker = Conexao()
-        if(not checker.verificar_vazio()):
-            frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='#ISO-8859-1')
+        self.label_error.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+        self.label_error1.setStyleSheet("QLabel { color: rgb(60,60,60)}")
 
         if(self.lineEdit_cadastro_senha.text()==""):
             self.label_error.setStyleSheet("QLabel { color: red}")
 
         elif(checker.verificar_vazio()):
-            print("elif")
             checker.criar_login(self.lineEdit_cadastro_usuario.text(), self.lineEdit_cadastro_senha.text())
             fluxo = Fluxo()
             fluxo.window_formulario()
             MainWindow.close()
-
-        elif(self.lineEdit_cadastro_usuario.text() in frame):
-            self.label_error.setStyleSheet("QLabel { color: red}")
 
         else:
-            checker.criar_login(self.lineEdit_cadastro_usuario.text(), self.lineEdit_cadastro_senha.text())
-            fluxo = Fluxo()
-            fluxo.window_formulario()
-            MainWindow.close()
+            frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi', sep=";")
+            if(self.lineEdit_cadastro_usuario.text() in list(frame["Login"])):
+                self.label_error1.setStyleSheet("QLabel { color: red}")
+
+            else:
+                checker.criar_login(self.lineEdit_cadastro_usuario.text(), self.lineEdit_cadastro_senha.text())
+                fluxo = Fluxo()
+                fluxo.window_formulario()
+                MainWindow.close()
 
 
 import files_rc

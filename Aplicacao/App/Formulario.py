@@ -721,6 +721,11 @@ class Ui_MainWindow(object):
                 MainWindow.close()
 
         else:
+                print("as")
+                checker.criar_conta(respostas)
+                fluxo = Fluxo()
+                fluxo.window_valorinvestimentos()
+                MainWindow.close()
 
 
 

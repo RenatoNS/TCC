@@ -1,6 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import *
+import pandas as pd
 from Fluxo import Fluxo
+from Comunicacao import Conexao
 
 
 class Ui_MainWindow(object):
@@ -104,10 +106,7 @@ class Ui_MainWindow(object):
 "    color: rgb(0, 0, 0);\n"
 "}")
         self.label_error = QtWidgets.QLabel(self.login_area)
-        #mudar para erro no banco de dados
-        if (True):
-            self.label_error.setText("x  Login e Senha Não Conferem")
-        self.label_error.setStyleSheet("QLabel { color: red}")
+        self.label_error.setText("x  Login e Senha Não Conferem")
         self.label_error.setFont(QFont('Arial', 15))
         self.label_error.move(85, 320)
         self.senha_lineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
@@ -153,6 +152,7 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QtCore.QRect(0, 0, 917, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
+        self.label_error.setStyleSheet("QLabel { color: rgb(60, 60, 60)}")
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -165,9 +165,26 @@ class Ui_MainWindow(object):
         self.btn_login.setText(_translate("MainWindow", "Conectar"))
 
     def click_login(self):
-        fluxo = Fluxo()
-        fluxo.window_valorinvestimentos()
-        MainWindow.close()
+        checker = Conexao()
+        if(checker.verificar_vazio()):
+            self.label_error.setStyleSheet("QLabel { color: red}")
+
+        else:
+            frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi', sep=";")
+            if(self.usuario_lineEdit.text() in list(frame["Login"])):
+                index = (list(frame["Login"])).index(self.usuario_lineEdit.text())
+                senha = list(frame["Senha"])
+                if (self.senha_lineEdit.text()==senha[index]):
+                    fluxo = Fluxo()
+                    fluxo.window_valorinvestimentos()
+                    MainWindow.close()
+
+                else:
+                    self.label_error.setStyleSheet("QLabel { color: red}")
+
+            else:
+                self.label_error.setStyleSheet("QLabel { color: red}")
+
 
 import sys
 import files_rc

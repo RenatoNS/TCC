@@ -1,6 +1,8 @@
 import Inicial
 
+
 class Fluxo:
+
 
     def window_login(self):
         import Login
