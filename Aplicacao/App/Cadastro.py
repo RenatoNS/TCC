@@ -8,7 +8,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import *
 from Fluxo import Fluxo
+from Comunicacao import Conexao
+import pandas as pd
 
 
 class Ui_MainWindow(object):
@@ -50,7 +53,7 @@ class Ui_MainWindow(object):
         self.cadastro_area = QtWidgets.QFrame(self.conteudo)
         self.cadastro_area.setMaximumSize(QtCore.QSize(450, 550))
         self.cadastro_area.setStyleSheet("background-color: rgb(60, 60, 60);\n"
-"border-radius: 10px;")
+                                         "border-radius: 10px;")
         self.cadastro_area.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.cadastro_area.setFrameShadow(QtWidgets.QFrame.Raised)
         self.cadastro_area.setObjectName("cadastro_area")
@@ -58,8 +61,8 @@ class Ui_MainWindow(object):
         self.logo.setGeometry(QtCore.QRect(45, 40, 360, 90))
         self.logo.setMaximumSize(QtCore.QSize(360, 90))
         self.logo.setStyleSheet("background-image: url(:/logo/logo_360x90_-removebg-preview.png);\n"
-"background-repeat: no-repeat;\n"
-"background-position: center;")
+                                "background-repeat: no-repeat;\n"
+                                "background-position: center;")
         self.logo.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.logo.setFrameShadow(QtWidgets.QFrame.Raised)
         self.logo.setObjectName("logo")
@@ -70,22 +73,22 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.lineEdit_cadastro_usuario.setFont(font)
         self.lineEdit_cadastro_usuario.setStyleSheet("QLineEdit{\n"
-"    color: rgb(0, 0, 0);\n"
-"    border: 2px solid rgb(250,250,250);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(250, 250, 250);\n"
-"    color: rgb(0, 0, 0);\n"
-"}\n"
-"\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"}\n"
-"\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                                     "    color: rgb(0, 0, 0);\n"
+                                                     "    border: 2px solid rgb(250,250,250);\n"
+                                                     "    border-radius: 5px;\n"
+                                                     "    padding: 15px;\n"
+                                                     "    background-color: rgb(250, 250, 250);\n"
+                                                     "    color: rgb(0, 0, 0);\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QLineEdit:hover{\n"
+                                                     "    border: 2px solid rgb(16, 5, 136);\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QLineEdit:focus{\n"
+                                                     "    border: 2px solid rgb(16, 5, 136);\n"
+                                                     "    color: rgb(0, 0, 0);\n"
+                                                     "}")
         self.lineEdit_cadastro_usuario.setFrame(True)
         self.lineEdit_cadastro_usuario.setObjectName("lineEdit_cadastro_usuario")
         self.lineEdit_cadastro_senha = QtWidgets.QLineEdit(self.cadastro_area)
@@ -95,22 +98,22 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.lineEdit_cadastro_senha.setFont(font)
         self.lineEdit_cadastro_senha.setStyleSheet("QLineEdit{\n"
-"    color: rgb(0, 0, 0);\n"
-"    border: 2px solid rgb(250,250,250);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(250, 250, 250);\n"
-"    color: rgb(0, 0, 0);\n"
-"}\n"
-"\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"}\n"
-"\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                                   "    color: rgb(0, 0, 0);\n"
+                                                   "    border: 2px solid rgb(250,250,250);\n"
+                                                   "    border-radius: 5px;\n"
+                                                   "    padding: 15px;\n"
+                                                   "    background-color: rgb(250, 250, 250);\n"
+                                                   "    color: rgb(0, 0, 0);\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QLineEdit:hover{\n"
+                                                   "    border: 2px solid rgb(16, 5, 136);\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QLineEdit:focus{\n"
+                                                   "    border: 2px solid rgb(16, 5, 136);\n"
+                                                   "    color: rgb(0, 0, 0);\n"
+                                                   "}")
         self.lineEdit_cadastro_senha.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_cadastro_senha.setObjectName("lineEdit_cadastro_senha")
         self.btn_cadastro_cadastrar = QtWidgets.QPushButton(self.cadastro_area)
@@ -123,22 +126,22 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.btn_cadastro_cadastrar.setFont(font)
         self.btn_cadastro_cadastrar.setStyleSheet("QPushButton{\n"
-"    background-color: rgb(170, 170, 170);\n"
-"    border: 2px solid rgb(180, 180, 180);\n"
-"    border-radius: 5px;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"    background-color: rgb(180, 180, 180);\n"
-"    border: 2px solid rgb(190, 190, 190);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    \n"
-"    background-color: rgb(16, 5, 136);\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"    color: rgb(255, 255, 255);\n"
-"}")
+                                                  "    background-color: rgb(170, 170, 170);\n"
+                                                  "    border: 2px solid rgb(180, 180, 180);\n"
+                                                  "    border-radius: 5px;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QPushButton:hover{\n"
+                                                  "    background-color: rgb(180, 180, 180);\n"
+                                                  "    border: 2px solid rgb(190, 190, 190);\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QPushButton:pressed{\n"
+                                                  "    \n"
+                                                  "    background-color: rgb(16, 5, 136);\n"
+                                                  "    border: 2px solid rgb(16, 5, 136);\n"
+                                                  "    color: rgb(255, 255, 255);\n"
+                                                  "}")
         self.btn_cadastro_cadastrar.setObjectName("btn_cadastro_cadastrar")
         self.label_cadastro_usuario = QtWidgets.QLabel(self.cadastro_area)
         self.label_cadastro_usuario.setGeometry(QtCore.QRect(85, 190, 280, 20))
@@ -150,6 +153,7 @@ class Ui_MainWindow(object):
         self.label_cadastro_usuario.setFont(font)
         self.label_cadastro_usuario.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_cadastro_usuario.setObjectName("label_cadastro_usuario")
+        self.label_error = QtWidgets.QLabel(self.cadastro_area)
         self.label_cadastro_senha = QtWidgets.QLabel(self.cadastro_area)
         self.label_cadastro_senha.setGeometry(QtCore.QRect(85, 320, 280, 20))
         font = QtGui.QFont()
@@ -197,15 +201,42 @@ class Ui_MainWindow(object):
         self.label_cadastro_usuario.setText(_translate("MainWindow", "Crie seu nome de usuário"))
         self.label_cadastro_senha.setText(_translate("MainWindow", "Crie sua senha"))
         self.label_cadastro.setText(_translate("MainWindow", "Cadastro"))
+        self.label_error.setText("Senha Não Pode Estar Vazia")
+        self.label_error.setFont(QFont('Arial', 15))
+        self.label_error.move(100, 410)
+        self.label_error.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+        self.label_error.setText("Login Existente")
+        self.label_error.setFont(QFont('Arial', 15))
+        self.label_error.move(100, 410)
+        self.label_error.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+
+
 
     def click_cadastrar(self):
-        if (True):
+        checker = Conexao()
+        if(not checker.verificar_vazio()):
+            frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='#ISO-8859-1')
+
+        if(self.lineEdit_cadastro_senha.text()==""):
+            self.label_error.setStyleSheet("QLabel { color: red}")
+
+        elif(checker.verificar_vazio()):
+            print("elif")
+            checker.criar_login(self.lineEdit_cadastro_usuario.text(), self.lineEdit_cadastro_senha.text())
             fluxo = Fluxo()
             fluxo.window_formulario()
             MainWindow.close()
-        if (False):
 
-            pass
+        elif(self.lineEdit_cadastro_usuario.text() in frame):
+            self.label_error.setStyleSheet("QLabel { color: red}")
+
+        else:
+            checker.criar_login(self.lineEdit_cadastro_usuario.text(), self.lineEdit_cadastro_senha.text())
+            fluxo = Fluxo()
+            fluxo.window_formulario()
+            MainWindow.close()
+
+
 import files_rc
 import sys
 

@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Fluxo import Fluxo
+from Comunicacao import Conexao
 
 
 class Ui_MainWindow(object):
@@ -690,9 +691,37 @@ class Ui_MainWindow(object):
         self.Questao_10_2_label.setText(_translate("MainWindow", "tem para manter seu dinheiro aplicado?"))
 
     def click_cadastrar(self):
-        fluxo = Fluxo()
-        fluxo.window_valorinvestimentos()
-        MainWindow.close()
+        perfil = [self.Q1_comboBox.currentIndex(),
+             self.Q2_comboBox.currentIndex(),
+             self.Q3_comboBox.currentIndex(),
+             self.Q4_comboBox.currentIndex(),
+             self.Q5_comboBox.currentIndex(),
+             self.Q6_comboBox.currentIndex(),
+             self.Q7_comboBox.currentIndex(),
+             self.Q8_comboBox.currentIndex(),
+             self.Q9_comboBox.currentIndex(),
+             self.Q10_comboBox.currentIndex()]
+
+        respostas = [self.Q1_comboBox.currentText(),
+             self.Q2_comboBox.currentText(),
+             self.Q3_comboBox.currentText(),
+             self.Q4_comboBox.currentText(),
+             self.Q5_comboBox.currentText(),
+             self.Q6_comboBox.currentText(),
+             self.Q7_comboBox.currentText(),
+             self.Q8_comboBox.currentText(),
+             self.Q9_comboBox.currentText(),
+             self.Q10_comboBox.currentText()]
+
+        checker = Conexao()
+        if (checker.verificar_vazio()):
+                checker.criar_primeira_conta(respostas)
+                fluxo = Fluxo()
+                fluxo.window_valorinvestimentos()
+                MainWindow.close()
+
+        else:
+
 
 
 
