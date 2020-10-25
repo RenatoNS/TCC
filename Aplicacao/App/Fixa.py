@@ -11,36 +11,36 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow_Tela_base(object):
-    def setupUi(self, MainWindow_Tela_base):
-        MainWindow_Tela_base.setObjectName("MainWindow_Tela_base")
-        MainWindow_Tela_base.resize(666, 700)
-        MainWindow_Tela_base.setMinimumSize(QtCore.QSize(500, 700))
-        MainWindow_Tela_base.setStyleSheet("background-color: rgb(42, 42, 42);")
-        self.centralwidget_Tela_base = QtWidgets.QWidget(MainWindow_Tela_base)
-        self.centralwidget_Tela_base.setObjectName("centralwidget_Tela_base")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget_Tela_base)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(666, 700)
+        MainWindow.setMinimumSize(QtCore.QSize(500, 700))
+        MainWindow.setStyleSheet("background-color: rgb(42, 42, 42);")
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.conteudo_Tela_base = QtWidgets.QFrame(self.centralwidget_Tela_base)
+        self.conteudo = QtWidgets.QFrame(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.conteudo_Tela_base.setFont(font)
-        self.conteudo_Tela_base.setStyleSheet("background-color: rgb(42, 42, 42);")
-        self.conteudo_Tela_base.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.conteudo_Tela_base.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.conteudo_Tela_base.setObjectName("conteudo_Tela_base")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.conteudo_Tela_base)
+        self.conteudo.setFont(font)
+        self.conteudo.setStyleSheet("background-color: rgb(42, 42, 42);")
+        self.conteudo.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.conteudo.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.conteudo.setObjectName("conteudo")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.conteudo)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.Tela_Base = QtWidgets.QFrame(self.conteudo_Tela_base)
-        self.Tela_Base.setMaximumSize(QtCore.QSize(10000, 10000))
-        self.Tela_Base.setStyleSheet("background-color: rgb(60, 60, 60);\n"
+        self.Fixa = QtWidgets.QFrame(self.conteudo)
+        self.Fixa.setMaximumSize(QtCore.QSize(10000, 10000))
+        self.Fixa.setStyleSheet("background-color: rgb(60, 60, 60);\n"
 "border-radius: 10px;")
-        self.Tela_Base.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.Tela_Base.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.Tela_Base.setObjectName("Tela_Base")
-        self.label = QtWidgets.QLabel(self.Tela_Base)
+        self.Fixa.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.Fixa.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.Fixa.setObjectName("Fixa")
+        self.label = QtWidgets.QLabel(self.Fixa)
         self.label.setGeometry(QtCore.QRect(120, 40, 411, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -80,6 +80,7 @@ class Ui_MainWindow_Tela_base(object):
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
         self.label.setPalette(palette)
+
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(48)
@@ -87,7 +88,7 @@ class Ui_MainWindow_Tela_base(object):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
-        self.label_4 = QtWidgets.QLabel(self.Tela_Base)
+        self.label_4 = QtWidgets.QLabel(self.Fixa)
         self.label_4.setGeometry(QtCore.QRect(10, 150, 641, 31))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -134,10 +135,10 @@ class Ui_MainWindow_Tela_base(object):
         font.setWeight(75)
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
-        self.textBrowser = QtWidgets.QTextBrowser(self.Tela_Base)
+        self.textBrowser = QtWidgets.QTextBrowser(self.Fixa)
         self.textBrowser.setGeometry(QtCore.QRect(20, 570, 621, 111))
         self.textBrowser.setObjectName("textBrowser")
-        self.checkBox = QtWidgets.QCheckBox(self.Tela_Base)
+        self.checkBox = QtWidgets.QCheckBox(self.Fixa)
         self.checkBox.setGeometry(QtCore.QRect(240, 610, 141, 17))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -183,27 +184,33 @@ class Ui_MainWindow_Tela_base(object):
         font.setWeight(75)
         self.checkBox.setFont(font)
         self.checkBox.setObjectName("checkBox")
-        self.verticalLayoutWidget = QtWidgets.QWidget(self.Tela_Base)
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.Fixa)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(420, 250, 81, 141))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.pushButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton.clicked.connect(self.CDB)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
         font.setBold(True)
         font.setWeight(75)
+        self.pushButton_6 = QtWidgets.QPushButton(self.conteudo)
+        self.pushButton_6.clicked.connect(self.avancar)
+        self.pushButton_6.setStyleSheet("background-color: rgb(170, 170, 170);\n"
+                                      "border: 2px solid rgb(180, 180, 180);\n"
+                                      "border-radius: 5px;\n"
+                                      "\n"
+                                      "")
+        self.pushButton_6.setFont(font)
+        self.pushButton_6.setGeometry(QtCore.QRect(180, 600, 280, 50))
         self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("background-color: rgb(170, 170, 170);\n"
-"border: 2px solid rgb(180, 180, 180);\n"
-"border-radius: 5px;\n"
-"\n"
-"")
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout_2.addWidget(self.pushButton)
         self.pushButton_3 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_3.clicked.connect(self.LCI)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -218,6 +225,7 @@ class Ui_MainWindow_Tela_base(object):
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout_2.addWidget(self.pushButton_3)
         self.pushButton_4 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_4.clicked.connect(self.LCA)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -232,6 +240,7 @@ class Ui_MainWindow_Tela_base(object):
         self.pushButton_4.setObjectName("pushButton_4")
         self.verticalLayout_2.addWidget(self.pushButton_4)
         self.pushButton_2 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_2.clicked.connect(self.tesouro)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -246,6 +255,7 @@ class Ui_MainWindow_Tela_base(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout_2.addWidget(self.pushButton_2)
         self.pushButton_5 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_5.clicked.connect(self.indexadores)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -259,7 +269,7 @@ class Ui_MainWindow_Tela_base(object):
 "")
         self.pushButton_5.setObjectName("pushButton_5")
         self.verticalLayout_2.addWidget(self.pushButton_5)
-        self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.Tela_Base)
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.Fixa)
         self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(100, 250, 301, 141))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
@@ -500,7 +510,7 @@ class Ui_MainWindow_Tela_base(object):
         self.label_7.setFont(font)
         self.label_7.setObjectName("label_7")
         self.verticalLayout_3.addWidget(self.label_7)
-        self.label_2 = QtWidgets.QLabel(self.Tela_Base)
+        self.label_2 = QtWidgets.QLabel(self.Fixa)
         self.label_2.setGeometry(QtCore.QRect(100, 400, 401, 20))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
@@ -547,42 +557,222 @@ class Ui_MainWindow_Tela_base(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
-        self.horizontalLayout.addWidget(self.Tela_Base)
-        self.verticalLayout.addWidget(self.conteudo_Tela_base)
-        MainWindow_Tela_base.setCentralWidget(self.centralwidget_Tela_base)
+        self.label_11 = QtWidgets.QLabel(self.Fixa)
+        self.label_11.setGeometry(QtCore.QRect(235, 550, 150, 20))
+        self.label_11.setPalette(palette)
+        self.label_11.setFont(font)
+        self.label_11.setText("Declare estar ciente")
+        self.horizontalLayout.addWidget(self.Fixa)
+        self.verticalLayout.addWidget(self.conteudo)
+        MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow_Tela_base)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow_Tela_base)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow_Tela_base):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow_Tela_base.setWindowTitle(_translate("MainWindow_Tela_base", "Tela_base"))
-        self.label.setText(_translate("MainWindow_Tela_base", "RENDA FIXA"))
-        self.label_4.setText(_translate("MainWindow_Tela_base", "Antes de prosseguir estude o básico sobre os principais produtos de renda fixa existentes no mercado:"))
-        self.textBrowser.setHtml(_translate("MainWindow_Tela_base", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        MainWindow.setWindowTitle(_translate("MainWindow", "Fixa"))
+        self.label.setText(_translate("MainWindow", "RENDA FIXA"))
+        self.label_4.setText(_translate("MainWindow", "Antes de prosseguir estude o básico sobre os principais produtos de renda fixa existentes no mercado:"))
+        self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:600; color:#ff0000;\">Investir pode causar prejuízos e consequentemente emoções negativas de perda. </span></p></body></html>"))
-        self.checkBox.setText(_translate("MainWindow_Tela_base", "Estou Ciente"))
-        self.pushButton.setText(_translate("MainWindow_Tela_base", "Ler"))
-        self.pushButton_3.setText(_translate("MainWindow_Tela_base", "Ler"))
-        self.pushButton_4.setText(_translate("MainWindow_Tela_base", "Ler"))
-        self.pushButton_2.setText(_translate("MainWindow_Tela_base", "Ler"))
-        self.pushButton_5.setText(_translate("MainWindow_Tela_base", "Ler"))
-        self.label_3.setText(_translate("MainWindow_Tela_base", " Certificado de Depósito Bancário - CDB"))
-        self.label_5.setText(_translate("MainWindow_Tela_base", "Letra de Crédito Imobiliário - LCI"))
-        self.label_6.setText(_translate("MainWindow_Tela_base", "Letra de Crédito do Agronegócio - LCA"))
-        self.label_8.setText(_translate("MainWindow_Tela_base", "Tesouro Direto"))
-        self.label_7.setText(_translate("MainWindow_Tela_base", "Principais Indexadores"))
-        self.label_2.setText(_translate("MainWindow_Tela_base", "É necessário ler todos os tópicos antes de prosseguir"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:600; color:#ffffff;\">Investir pode causar prejuízos e consequentemente emoções negativas de perda </span></p></body></html>"))
+        self.textBrowser.move(20,480)
+        self.checkBox.setText(_translate("MainWindow", "Estou Ciente"))
+        self.checkBox.move(250, 520)
+        self.pushButton.setText(_translate("MainWindow", "Ler"))
+        self.pushButton_3.setText(_translate("MainWindow", "Ler"))
+        self.pushButton_4.setText(_translate("MainWindow", "Ler"))
+        self.pushButton_2.setText(_translate("MainWindow", "Ler"))
+        self.pushButton_5.setText(_translate("MainWindow", "Ler"))
+        self.pushButton_6.setText(_translate("MainWindow", "Avancar"))
+        self.label_3.setText(_translate("MainWindow", " Certificado de Depósito Bancário - CDB"))
+        self.label_5.setText(_translate("MainWindow", "Letra de Crédito Imobiliário - LCI"))
+        self.label_6.setText(_translate("MainWindow", "Letra de Crédito do Agronegócio - LCA"))
+        self.label_8.setText(_translate("MainWindow", "Tesouro Direto"))
+        self.label_7.setText(_translate("MainWindow", "Principais Indexadores"))
+        self.label_2.setText(_translate("MainWindow", "É necessário ler todos os tópicos antes de prosseguir"))
+        self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+        self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+        self.pushButton.setStyleSheet("QPushButton{\n"
+                                      "    background-color: rgb(170, 170, 170);\n"
+                                      "    border: 2px solid rgb(180, 180, 180);\n"
+                                      "    border-radius: 5px;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover{\n"
+                                      "    background-color: rgb(180, 180, 180);\n"
+                                      "    border: 2px solid rgb(190, 190, 190);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed{\n"
+                                      "    \n"
+                                      "    background-color: rgb(16, 5, 136);\n"
+                                      "    border: 2px solid rgb(16, 5, 136);\n"
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "}")
+        self.pushButton_2.setStyleSheet("QPushButton{\n"
+                                      "    background-color: rgb(170, 170, 170);\n"
+                                      "    border: 2px solid rgb(180, 180, 180);\n"
+                                      "    border-radius: 5px;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover{\n"
+                                      "    background-color: rgb(180, 180, 180);\n"
+                                      "    border: 2px solid rgb(190, 190, 190);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed{\n"
+                                      "    \n"
+                                      "    background-color: rgb(16, 5, 136);\n"
+                                      "    border: 2px solid rgb(16, 5, 136);\n"
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "}")
+        self.pushButton_3.setStyleSheet("QPushButton{\n"
+                                      "    background-color: rgb(170, 170, 170);\n"
+                                      "    border: 2px solid rgb(180, 180, 180);\n"
+                                      "    border-radius: 5px;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover{\n"
+                                      "    background-color: rgb(180, 180, 180);\n"
+                                      "    border: 2px solid rgb(190, 190, 190);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed{\n"
+                                      "    \n"
+                                      "    background-color: rgb(16, 5, 136);\n"
+                                      "    border: 2px solid rgb(16, 5, 136);\n"
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "}")
+        self.pushButton_4.setStyleSheet("QPushButton{\n"
+                                      "    background-color: rgb(170, 170, 170);\n"
+                                      "    border: 2px solid rgb(180, 180, 180);\n"
+                                      "    border-radius: 5px;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover{\n"
+                                      "    background-color: rgb(180, 180, 180);\n"
+                                      "    border: 2px solid rgb(190, 190, 190);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed{\n"
+                                      "    \n"
+                                      "    background-color: rgb(16, 5, 136);\n"
+                                      "    border: 2px solid rgb(16, 5, 136);\n"
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "}")
+        self.pushButton_5.setStyleSheet("QPushButton{\n"
+                                      "    background-color: rgb(170, 170, 170);\n"
+                                      "    border: 2px solid rgb(180, 180, 180);\n"
+                                      "    border-radius: 5px;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover{\n"
+                                      "    background-color: rgb(180, 180, 180);\n"
+                                      "    border: 2px solid rgb(190, 190, 190);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed{\n"
+                                      "    \n"
+                                      "    background-color: rgb(16, 5, 136);\n"
+                                      "    border: 2px solid rgb(16, 5, 136);\n"
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "}")
+        self.pushButton_6.setStyleSheet("QPushButton{\n"
+                                      "    background-color: rgb(170, 170, 170);\n"
+                                      "    border: 2px solid rgb(180, 180, 180);\n"
+                                      "    border-radius: 5px;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover{\n"
+                                      "    background-color: rgb(180, 180, 180);\n"
+                                      "    border: 2px solid rgb(190, 190, 190);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed{\n"
+                                      "    \n"
+                                      "    background-color: rgb(16, 5, 136);\n"
+                                      "    border: 2px solid rgb(16, 5, 136);\n"
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "}")
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow_Tela_base = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow_Tela_base()
-    ui.setupUi(MainWindow_Tela_base)
-    MainWindow_Tela_base.show()
-    sys.exit(app.exec_())
+
+
+    def LCI(self):
+            self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_5.setStyleSheet("QLabel { color: green}")
+            global LCI
+            LCI = 1
+            fluxo.window_LCI()
+
+    def LCA(self):
+            self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_6.setStyleSheet("QLabel { color: green}")
+            global LCA
+            LCA = 1
+            fluxo.window_LCA()
+
+    def CDB(self):
+            self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_3.setStyleSheet("QLabel { color: green}")
+            global CDB
+            CDB = 1
+            fluxo.window_CDB()
+
+    def tesouro(self):
+            self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_8.setStyleSheet("QLabel { color: green}")
+            global tes
+            tes = 1
+            fluxo.window_tesouro()
+
+    def indexadores(self):
+            self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_7.setStyleSheet("QLabel { color: green}")
+            global index
+            index = 1
+            fluxo.window_indexadores()
+
+
+    def avancar(self):
+            self.label_2.setStyleSheet("QLabel { color: red}")
+
+            if (self.checkBox.isChecked() == True):
+                self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            else:
+                self.label_11.setStyleSheet("QLabel { color: red}")
+
+            try:
+                if(LCA + LCI + CDB + tes + index == 5):
+                        self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+                        if(self.checkBox.isChecked()==True):
+                                self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+                                #abrir janela
+            except:
+                self.label_2.setStyleSheet("QLabel { color: red}")
+
+
+
+
+
+from Fluxo import Fluxo
+import files_rc
+import sys
+
+
+fluxo = Fluxo()
+app = QtWidgets.QApplication(sys.argv)
+MainWindow = QtWidgets.QMainWindow()
+ui = Ui_MainWindow()
+ui.setupUi(MainWindow)
+MainWindow.show()
+app.exec_()

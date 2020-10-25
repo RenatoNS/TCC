@@ -232,7 +232,9 @@ class Ui_MainWindow_valor_investimento(object):
         self.radioButton_3.setText(_translate("MainWindow_valor_investimento", "Anos"))
 
     def pesquisar(self):
-        pass
+        fluxo = Fluxo()
+        fluxo.window_fixa()
+        MainWindow_valor_investimento.close()
 
 import files_rc
 import sys

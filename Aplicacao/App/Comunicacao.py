@@ -95,4 +95,3 @@ class Conexao:
         frames.to_csv("Clientes.csv", sep=";", encoding='ansi')
         os.remove('C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv')
         os.remove('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv')
-
