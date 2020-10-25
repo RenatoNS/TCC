@@ -34,3 +34,21 @@ class Fluxo:
 
     def window_indexadores(self):
         import Indexadores
+
+    def window_variavel(self):
+        import Variavel
+
+    def window_comeco(self):
+        import Comeco
+
+    def window_informacoes(self):
+        import Informacoes
+
+    def window_iniciante(self):
+        import Iniciante
+
+    def window_stop(self):
+        import Stop
+
+    def window_aprofundamento(self):
+        import Informacoes

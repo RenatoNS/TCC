@@ -48,9 +48,9 @@ class Ui_MainWindow_valor_investimento(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.conteudo_valor_investimento)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.valor_investimento_area = QtWidgets.QFrame(self.conteudo_valor_investimento)
-        self.valor_investimento_area.setMaximumSize(QtCore.QSize(450, 550))
+        self.valor_investimento_area.setMaximumSize(QtCore.QSize(450, 650))
         self.valor_investimento_area.setStyleSheet("background-color: rgb(60, 60, 60);\n"
-"border-radius: 10px;")
+                                                   "border-radius: 10px;")
         self.valor_investimento_area.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.valor_investimento_area.setFrameShadow(QtWidgets.QFrame.Raised)
         self.valor_investimento_area.setObjectName("valor_investimento_area")
@@ -58,39 +58,39 @@ class Ui_MainWindow_valor_investimento(object):
         self.logo.setGeometry(QtCore.QRect(45, 40, 360, 90))
         self.logo.setMaximumSize(QtCore.QSize(360, 90))
         self.logo.setStyleSheet("background-image: url(:/logo/logo_360x90_-removebg-preview.png);\n"
-"background-repeat: no-repeat;\n"
-"background-position: center;")
+                                "background-repeat: no-repeat;\n"
+                                "background-position: center;")
         self.logo.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.logo.setFrameShadow(QtWidgets.QFrame.Raised)
         self.logo.setObjectName("logo")
         self.lineEdit_valor_investimento_valor = QtWidgets.QLineEdit(self.valor_investimento_area)
-        self.lineEdit_valor_investimento_valor.setGeometry(QtCore.QRect(85, 210, 280, 55))
+        self.lineEdit_valor_investimento_valor.setGeometry(QtCore.QRect(85, 180, 280, 55))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
         self.lineEdit_valor_investimento_valor.setFont(font)
         self.lineEdit_valor_investimento_valor.setStyleSheet("QLineEdit{\n"
-"    color: rgb(0, 0, 0);\n"
-"    border: 2px solid rgb(250,250,250);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(250, 250, 250);\n"
-"    color: rgb(0, 0, 0);\n"
-"}\n"
-"\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"}\n"
-"\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                                             "    color: rgb(0, 0, 0);\n"
+                                                             "    border: 2px solid rgb(250,250,250);\n"
+                                                             "    border-radius: 5px;\n"
+                                                             "    padding: 15px;\n"
+                                                             "    background-color: rgb(250, 250, 250);\n"
+                                                             "    color: rgb(0, 0, 0);\n"
+                                                             "}\n"
+                                                             "\n"
+                                                             "QLineEdit:hover{\n"
+                                                             "    border: 2px solid rgb(16, 5, 136);\n"
+                                                             "}\n"
+                                                             "\n"
+                                                             "QLineEdit:focus{\n"
+                                                             "    border: 2px solid rgb(16, 5, 136);\n"
+                                                             "    color: rgb(0, 0, 0);\n"
+                                                             "}")
         self.lineEdit_valor_investimento_valor.setFrame(True)
         self.lineEdit_valor_investimento_valor.setObjectName("lineEdit_valor_investimento_valor")
         self.btn_valor_investimento_ok = QtWidgets.QPushButton(self.valor_investimento_area)
         self.btn_valor_investimento_ok.clicked.connect(self.pesquisar)
-        self.btn_valor_investimento_ok.setGeometry(QtCore.QRect(85, 450, 280, 50))
+        self.btn_valor_investimento_ok.setGeometry(QtCore.QRect(85, 550, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -98,25 +98,25 @@ class Ui_MainWindow_valor_investimento(object):
         font.setWeight(75)
         self.btn_valor_investimento_ok.setFont(font)
         self.btn_valor_investimento_ok.setStyleSheet("QPushButton{\n"
-"    background-color: rgb(170, 170, 170);\n"
-"    border: 2px solid rgb(180, 180, 180);\n"
-"    border-radius: 5px;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"    background-color: rgb(180, 180, 180);\n"
-"    border: 2px solid rgb(190, 190, 190);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    \n"
-"    background-color: rgb(16, 5, 136);\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"    color: rgb(255, 255, 255);\n"
-"}")
+                                                     "    background-color: rgb(170, 170, 170);\n"
+                                                     "    border: 2px solid rgb(180, 180, 180);\n"
+                                                     "    border-radius: 5px;\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QPushButton:hover{\n"
+                                                     "    background-color: rgb(180, 180, 180);\n"
+                                                     "    border: 2px solid rgb(190, 190, 190);\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QPushButton:pressed{\n"
+                                                     "    \n"
+                                                     "    background-color: rgb(16, 5, 136);\n"
+                                                     "    border: 2px solid rgb(16, 5, 136);\n"
+                                                     "    color: rgb(255, 255, 255);\n"
+                                                     "}")
         self.btn_valor_investimento_ok.setObjectName("btn_valor_investimento_ok")
         self.label_valor_investimento_valor = QtWidgets.QLabel(self.valor_investimento_area)
-        self.label_valor_investimento_valor.setGeometry(QtCore.QRect(94, 180, 261, 20))
+        self.label_valor_investimento_valor.setGeometry(QtCore.QRect(94, 150, 261, 20))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(12)
@@ -124,6 +124,14 @@ class Ui_MainWindow_valor_investimento(object):
         font.setWeight(75)
         self.label_valor_investimento_valor.setFont(font)
         self.label_valor_investimento_valor.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_error1 = QtWidgets.QLabel(self.valor_investimento_area)
+        self.label_error1.setGeometry(QtCore.QRect(30, 250, 440, 20))
+        self.label_error1.setFont(font)
+        self.label_error1.setText("Apenas números inteiros ou decimais são permitidos")
+        self.label_error2 = QtWidgets.QLabel(self.valor_investimento_area)
+        self.label_error2.setGeometry(QtCore.QRect(90, 450, 360, 20))
+        self.label_error2.setFont(font)
+        self.label_error2.setText("Apenas números inteiros são permitidos")
         self.label_valor_investimento_valor.setObjectName("label_valor_investimento_valor")
         self.label_valor_investimento_tempo1 = QtWidgets.QLabel(self.valor_investimento_area)
         self.label_valor_investimento_tempo1.setGeometry(QtCore.QRect(99, 300, 241, 20))
@@ -152,22 +160,22 @@ class Ui_MainWindow_valor_investimento(object):
         font.setPointSize(11)
         self.lineEdit_valor_investimento_valor_2.setFont(font)
         self.lineEdit_valor_investimento_valor_2.setStyleSheet("QLineEdit{\n"
-"    color: rgb(0, 0, 0);\n"
-"    border: 2px solid rgb(250,250,250);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(250, 250, 250);\n"
-"    color: rgb(0, 0, 0);\n"
-"}\n"
-"\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"}\n"
-"\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(16, 5, 136);\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                                               "    color: rgb(0, 0, 0);\n"
+                                                               "    border: 2px solid rgb(250,250,250);\n"
+                                                               "    border-radius: 5px;\n"
+                                                               "    padding: 15px;\n"
+                                                               "    background-color: rgb(250, 250, 250);\n"
+                                                               "    color: rgb(0, 0, 0);\n"
+                                                               "}\n"
+                                                               "\n"
+                                                               "QLineEdit:hover{\n"
+                                                               "    border: 2px solid rgb(16, 5, 136);\n"
+                                                               "}\n"
+                                                               "\n"
+                                                               "QLineEdit:focus{\n"
+                                                               "    border: 2px solid rgb(16, 5, 136);\n"
+                                                               "    color: rgb(0, 0, 0);\n"
+                                                               "}")
         self.lineEdit_valor_investimento_valor_2.setFrame(True)
         self.lineEdit_valor_investimento_valor_2.setObjectName("lineEdit_valor_investimento_valor_2")
         self.radioButton = QtWidgets.QRadioButton(self.valor_investimento_area)
@@ -221,24 +229,57 @@ class Ui_MainWindow_valor_investimento(object):
     def retranslateUi(self, MainWindow_valor_investimento):
         _translate = QtCore.QCoreApplication.translate
         MainWindow_valor_investimento.setWindowTitle(_translate("MainWindow_valor_investimento", "Investimento"))
-        self.lineEdit_valor_investimento_valor.setPlaceholderText(_translate("MainWindow_valor_investimento", "Valor investido"))
+        self.lineEdit_valor_investimento_valor.setPlaceholderText(
+            _translate("MainWindow_valor_investimento", "Valor investido"))
         self.btn_valor_investimento_ok.setText(_translate("MainWindow_valor_investimento", "Ok"))
-        self.label_valor_investimento_valor.setText(_translate("MainWindow_valor_investimento", "Qual será o valor investido hoje?"))
-        self.label_valor_investimento_tempo1.setText(_translate("MainWindow_valor_investimento", "Por quanto tempo esse valor"))
-        self.label_valor_investimento_tempo2.setText(_translate("MainWindow_valor_investimento", "poderá ficar aplicado?"))
-        self.lineEdit_valor_investimento_valor_2.setPlaceholderText(_translate("MainWindow_valor_investimento", "Tempo da aplicação"))
+        self.label_valor_investimento_valor.setText(
+            _translate("MainWindow_valor_investimento", "Qual será o valor investido hoje?"))
+        self.label_valor_investimento_tempo1.setText(
+            _translate("MainWindow_valor_investimento", "Por quanto tempo esse valor"))
+        self.label_valor_investimento_tempo2.setText(
+            _translate("MainWindow_valor_investimento", "poderá ficar aplicado?"))
+        self.lineEdit_valor_investimento_valor_2.setPlaceholderText(
+            _translate("MainWindow_valor_investimento", "Tempo da aplicação"))
         self.radioButton.setText(_translate("MainWindow_valor_investimento", "Dias"))
         self.radioButton_2.setText(_translate("MainWindow_valor_investimento", "Meses"))
         self.radioButton_3.setText(_translate("MainWindow_valor_investimento", "Anos"))
+        self.label_error1.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+        self.label_error2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
 
     def pesquisar(self):
-        fluxo = Fluxo()
-        fluxo.window_fixa()
-        MainWindow_valor_investimento.close()
+
+        condition1 = False
+        condition2 = False
+
+        try:
+            string = self.lineEdit_valor_investimento_valor.text()
+            lis = []
+            for letra in string:
+                if(letra==","):
+                    lis.append(".")
+                else:
+                    lis.append(letra)
+            numero = round(float("".join(lis)), 2)
+            self.label_error1.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            condition1=True
+        except:
+            self.label_error1.setStyleSheet("QLabel { color: red}")
+
+        try:
+            int(self.lineEdit_valor_investimento_valor_2.text())
+            self.label_error2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            condition2=True
+        except:
+            self.label_error2.setStyleSheet("QLabel { color: red}")
+
+        if(condition1 & condition2):
+            fluxo = Fluxo()
+            fluxo.window_fixa()
+            MainWindow_valor_investimento.close()
+
 
 import files_rc
 import sys
-
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow_valor_investimento = QtWidgets.QMainWindow()
