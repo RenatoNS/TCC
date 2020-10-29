@@ -1,2 +1,5 @@
 MENEZES - Introdução à Programaçãocom Python
 NETO, SANTOS E MELLO - O mercado de renda fixa no brasil
+ANBIMA - Raio X do investidor brasileiro - https://www.anbima.com.br/pt_br/especial/raio-x-do-investidor-2020.htm
+FINANCEONE - Guia do investidor iniciante - https://financeone.com.br/wp-content/uploads/2017/12/E-book-Investidor-Iniciante.pdf
+FAYH - Perfil de Investidor conservador, moderado, arrojado: Investimento? - https://comoinvestir.thecap.com.br/perfil-de-investidor/
