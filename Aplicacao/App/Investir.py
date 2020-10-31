@@ -9,8 +9,11 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Fluxo import Fluxo
+import pandas as pd
 from download_google_drive_funcoes import consulta_opcoes_CDB, consulta_opcoes_LCI, consulta_opcoes_LCA, consulta_opcoes_tesouro,download_opcoesRF,criar_resultado_RF_excel
-
+import os
+os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
+from funcao_renda_variavel import download_opcoesRV
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -77,9 +80,7 @@ class Ui_MainWindow(object):
         self.Investir.setFrameShadow(QtWidgets.QFrame.Raised)
         self.Investir.setObjectName("Investir")
         self.label = QtWidgets.QLabel(self.Investir)
-        self.label.setGeometry(QtCore.QRect(
-
-        ))
+        self.label.setGeometry(QtCore.QRect(200, 80, 131, 31))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -1159,14 +1160,15 @@ class Ui_MainWindow(object):
         self.lineEdit_valor_8.setFrame(True)
         self.lineEdit_valor_8.setObjectName("lineEdit_valor_8")
         self.label_16 = QtWidgets.QLabel(self.Investir)
-        self.label_16.setGeometry(QtCore.QRect(150, 370, 150, 30))
+        self.label_16.setGeometry(QtCore.QRect(180, 370, 150, 30))
         self.label_17 = QtWidgets.QLabel(self.Investir)
-        self.label_17.setGeometry(QtCore.QRect(150, 510, 150, 20))
+        self.label_17.setGeometry(QtCore.QRect(180, 510, 150, 20))
         self.label_16.setStyleSheet("QLabel { color: rgb(60, 60, 60)}")
         self.label_17.setStyleSheet("QLabel { color: rgb(60, 60, 60)}")
         self.horizontalLayout.addWidget(self.Investir)
         self.verticalLayout.addWidget(self.conteudo)
         MainWindow.setCentralWidget(self.centralwidget)
+
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -1175,9 +1177,24 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Investir"))
         self.label.setText(_translate("MainWindow", "Seu perfil é"))
-        self.label_2.setText(_translate("MainWindow", "X"))
+        frameperfil = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv', encoding='ansi', sep=";",
+                                  index_col=0)
+        perfil = list(frameperfil["perfil"])
+        perfil = perfil[0]
+        self.label_2.setText(_translate("MainWindow", perfil))
+        if (perfil=="Conservador"):
+                self.label_2.setStyleSheet("QLabel {color: green}")
+                self.label_5.setStyleSheet("QLabel {color: green}")
+                self.label_5.setText(_translate("MainWindow", "    100%"))
+        elif (perfil=="Moderado"):
+                self.label_2.setStyleSheet("QLabel {color: orange}")
+                self.label_5.setStyleSheet("QLabel {color: orange}")
+                self.label_5.setText(_translate("MainWindow", "     70%"))
+        else:
+                self.label_2.setStyleSheet("QLabel {color: red}")
+                self.label_5.setStyleSheet("QLabel {color: red}")
+                self.label_5.setText(_translate("MainWindow", "     40%"))
         self.label_3.setText(_translate("MainWindow", "Recomendamos"))
-        self.label_5.setText(_translate("MainWindow", "TextLabel"))
         self.label_4.setText(_translate("MainWindow", "investidos em renda fixa"))
         self.label_6.setText(_translate("MainWindow", "O produto abaixo não possui fundo garantidor de crédito"))
         self.CDB_4.setText(_translate("MainWindow", "Tesouro"))
@@ -1195,8 +1212,8 @@ class Ui_MainWindow(object):
         self.label_13.setText(_translate("MainWindow", "INVESTIR"))
         self.label_14.setText(_translate("MainWindow", "fonte:https://blog.toroinvestimentos.com.br/perfil-de-investidor-conservador-moderado-arrojado "))
         self.label_15.setText(_translate("MainWindow", "Marque os investimentos em que tem interesse"))
-        self.label_16.setText(_translate("MainWindow", "Números inteiros ou decimais"))
-        self.label_17.setText(_translate("MainWindow", "Números inteiros ou decimais"))
+        self.label_16.setText(_translate("MainWindow", "Números inteiros"))
+        self.label_17.setText(_translate("MainWindow", "Números inteiros"))
 
     def pesquisar(self):
                 download_opcoesRF()
@@ -1248,10 +1265,15 @@ class Ui_MainWindow(object):
                         fluxo=Fluxo()
                         if (self.checkBox.isChecked()):
                                 fluxo.window_variavel()
+                                os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
                                 MainWindow.close()
+
                         else:
                                 fluxo.window_fim()
+                                os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
+                                download_funcoesRV()
                                 MainWindow.close()
+
 
 
 import files_rc

@@ -174,7 +174,11 @@ class Ui_MainWindow(object):
             if(self.usuario_lineEdit.text() in list(frame["Login"])):
                 index = (list(frame["Login"])).index(self.usuario_lineEdit.text())
                 senha = list(frame["Senha"])
+                perfil = list(frame["Perfil"])
                 if (self.senha_lineEdit.text()==senha[index]):
+                    perfil_atual = perfil[index]
+                    pdperfil = pd.DataFrame([perfil_atual], columns =["perfil"])
+                    pdperfil.to_csv("perfil_temp.csv", encoding='utf-8', sep=";")
                     fluxo = Fluxo()
                     fluxo.window_fixa()
                     MainWindow.close()
