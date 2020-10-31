@@ -25,6 +25,7 @@ def download_opcoesRF():
         url = f'https://drive.google.com/uc?id={idurl}'
         output = nome
         gdown.download(url, output, quiet = True)
+    return
 
 
 
@@ -69,7 +70,8 @@ def consulta_opcoes_CDB(dataF, valor):
     dfOpcoesCDB['Coberto pelo FGC?'] = 'Sim'
     dfOpcoesCDB['Risco'] = 'Baixo'
     dfOpcoesCDB['Canal de Atendimento'] = 'atendimento@btgpactualdigital.com'
-    return(dfOpcoesCDB)
+    dfOpcoesCDB.to_csv('dfCDBop.csv', sep = ';', encoding = 'ansi', index = False)
+    return
 
 
 def consulta_opcoes_LCI(dataF, valor):
@@ -88,7 +90,8 @@ def consulta_opcoes_LCI(dataF, valor):
     dfOpcoesLCI['Coberto pelo FGC?'] = 'Sim'
     dfOpcoesLCI['Risco'] = 'Baixo'
     dfOpcoesLCI['Canal de Atendimento'] = 'atendimento@btgpactualdigital.com'
-    return(dfOpcoesLCI)
+    dfOpcoesLCI.to_csv('dfLCIop.csv', sep = ';', encoding = 'ansi', index = False)
+    return
     
 
 def consulta_opcoes_LCA(dataF, valor):
@@ -107,7 +110,8 @@ def consulta_opcoes_LCA(dataF, valor):
     dfOpcoesLCA['Coberto pelo FGC?'] = 'Sim'
     dfOpcoesLCA['Risco'] = 'Baixo'
     dfOpcoesLCA['Canal de Atendimento'] = 'atendimento@btgpactualdigital.com'
-    return(dfOpcoesLCA)
+    dfOpcoesLCA.to_csv('dfLCAop.csv', sep = ';', encoding = 'ansi', index = False)
+    return
     
 
 def consulta_opcoes_tesouro(dataF, valor):
@@ -134,12 +138,31 @@ def consulta_opcoes_tesouro(dataF, valor):
     dfOpcoesTesouro['Coberto pelo FGC?'] = 'Não'
     dfOpcoesTesouro['Risco'] = 'Baixo'
     dfOpcoesTesouro['Canal de Atendimento'] = 'https://www.tesourodireto.com.br/central-de-atendimento/entre-em-contato.htm'
-    return(dfOpcoesTesouro)
+    dfOpcoesTesouro.to_csv('dfTesouroOp.csv', sep = ';', encoding = 'ansi', index = False)
+    return
 
 
 
 def criar_resultado_RF_excel():
-    writer = pd.ExcelWriter('Opcoes_Adequadas.xlsx', engine='xlsxwriter')
+    try:
+        dfCDBop = pd.read_csv('dfCDBop.csv', sep = ';', encoding = 'ansi')        
+    except:
+        pass        
+    try:
+        dfLCIop = pd.read_csv('dfLCIop.csv', sep = ';', encoding = 'ansi')        
+    except:
+        pass
+    try:
+        dfLCAop = pd.read_csv('dfLCAop.csv', sep = ';', encoding = 'ansi')        
+    except:
+        pass
+    try:
+        dfTesouroOp = pd.read_csv('dfTesouroOp.csv', sep = ';', encoding = 'ansi')        
+    except:
+        pass
+    
+    writer = pd.ExcelWriter('Opcoes_Adequadas_Renda_Fixa.xlsx', engine='xlsxwriter')
+    
     try:
         dfCDBop.to_excel(writer, sheet_name='CDB', index = False)
     except:
@@ -161,25 +184,51 @@ def criar_resultado_RF_excel():
         pass
 
     writer.save()
+    
+    try:
+        os.remove('dfCDBop.csv')
+    except:
+        pass
 
+    try:
+        os.remove('dfLCIop.csv')
+    except:
+        pass
+    try:
+        os.remove('dfLCAop.csv')
+    except:
+        pass
 
-
+    try:
+        os.remove('dfTesouroOp.csv')
+    except:
+        pass
+    
+    os.remove('CDB_Clean.csv')
+    os.remove('LCI_Clean.csv')
+    os.remove('LCA_Clean.csv')
+    os.remove('tesouro_Clean.csv')    
+    os.remove('completo_Clean.csv')
+    
+    return
+    
 
 #%% Definir diretorio para salvar os dados
 
-os.chdir(r'C:\TCC2')
+os.chdir(r'C:\TCC')
 # os.getcwd()
 
 #%% Execucao
 
 download_opcoesRF()
 
+# Exemplos de execucao
+#consulta_opcoes_CDB('12/02/2022', 5000)
+#consulta_opcoes_LCI('12/02/2021', 12000)
+#consulta_opcoes_LCA('12/02/2021', 12000)
+#consulta_opcoes_tesouro('12/02/2035', 12000)
+
 criar_resultado_RF_excel()
 
-# Exemplos de execucao
-#dfCDBop = consulta_opcoes_CDB('12/02/2021', 12000)
-#dfLCIop = consulta_opcoes_LCI('12/02/2021', 12000)
-#dfLCAop = consulta_opcoes_LCA('12/02/2021', 12000)
-#dfTesouroOp = consulta_opcoes_tesouro('12/02/2035', 12000)
 
-
+ 

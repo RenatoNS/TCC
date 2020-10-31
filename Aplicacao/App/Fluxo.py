@@ -55,3 +55,6 @@ class Fluxo:
 
     def window_investir2(self):
         import Investir2
+
+    def window_fim(self):
+        import Fim
