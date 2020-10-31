@@ -11,9 +11,6 @@ class Fluxo:
     def window_formulario(self):
         import Formulario
 
-    def window_valorinvestimentos(self):
-        import ValorInvestimento
-
     def window_fixa(self):
         import Fixa
 
@@ -52,3 +49,9 @@ class Fluxo:
 
     def window_aprofundamento(self):
         import Informacoes
+
+    def window_investir(self):
+        import Investir
+
+    def window_investir2(self):
+        import Investir2

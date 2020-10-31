@@ -751,7 +751,7 @@ class Ui_MainWindow(object):
                         self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
                         if(self.checkBox.isChecked()==True):
                                 self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
-                                fluxo.window_variavel()
+                                fluxo.window_investir()
                                 MainWindow.close()
             except:
                 self.label_2.setStyleSheet("QLabel { color: red}")

@@ -176,7 +176,7 @@ class Ui_MainWindow(object):
                 senha = list(frame["Senha"])
                 if (self.senha_lineEdit.text()==senha[index]):
                     fluxo = Fluxo()
-                    fluxo.window_valorinvestimentos()
+                    fluxo.window_fixa()
                     MainWindow.close()
 
                 else:

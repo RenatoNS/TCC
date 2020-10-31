@@ -717,13 +717,13 @@ class Ui_MainWindow(object):
         if (checker.verificar_vazio()):
                 checker.criar_primeira_conta(respostas,perfil)
                 fluxo = Fluxo()
-                fluxo.window_valorinvestimentos()
+                fluxo.window_fixa()
                 MainWindow.close()
 
         else:
                 checker.criar_conta(respostas,perfil)
                 fluxo = Fluxo()
-                fluxo.window_valorinvestimentos()
+                fluxo.window_fixa()
                 MainWindow.close()
 
 
