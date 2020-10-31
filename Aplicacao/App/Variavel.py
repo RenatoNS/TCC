@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Fluxo import Fluxo
+import os
+import pandas as pd
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -704,7 +706,16 @@ class Ui_MainWindow(object):
                 if (condition1 & condition2 & condition3 & condition4):
                         self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
                         if (self.checkBox.isChecked() == True):
+                                df = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi',
+                                                 sep=";")
+                                dfleitor = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv', encoding='ansi',
+                                                       sep=";")
+                                os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
+                                index = (list(df["Login"])).index(str(dfleitor.iloc[0][1]))
+                                df["lidorv"][index] = 1
+                                df.to_csv("Clientes.csv", sep=";", encoding='ansi', index=False)
                                 self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+                              #  os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
                                 fluxo.window_investir2()
                                 MainWindow.close()
         except:

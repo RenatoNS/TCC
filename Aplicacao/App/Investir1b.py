@@ -12,10 +12,8 @@ from Fluxo import Fluxo
 import pandas as pd
 from download_google_drive_funcoes import consulta_opcoes_CDB, consulta_opcoes_LCI, consulta_opcoes_LCA, consulta_opcoes_tesouro,download_opcoesRF,criar_resultado_RF_excel
 import os
-from funcao_renda_variavel import download_opcoesRV
-
 os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
-
+from funcao_renda_variavel import download_opcoesRV
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -542,6 +540,30 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         font.setBold(True)
         font.setWeight(75)
+        self.pushButton15 = QtWidgets.QPushButton(self.Investir)
+        self.pushButton15.setGeometry(QtCore.QRect(320, 600, 121, 31))
+        self.pushButton15.setFont(font)
+        self.pushButton15.setStyleSheet("QPushButton{\n"
+                                      "    background-color: rgb(170, 170, 170);\n"
+                                      "    border: 2px solid rgb(180, 180, 180);\n"
+                                      "    border-radius: 5px;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover{\n"
+                                      "    background-color: rgb(180, 180, 180);\n"
+                                      "    border: 2px solid rgb(190, 190, 190);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed{\n"
+                                      "    \n"
+                                      "    background-color: rgb(16, 5, 136);\n"
+                                      "    border: 2px solid rgb(16, 5, 136);\n"
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "}")
+        self.pushButton15.clicked.connect(self.estudar)
+        self.pushButton15.setGeometry(QtCore.QRect(150, 600, 121, 31))
+        self.pushButton15.setText("Estudar")
+
         self.pushButton.setFont(font)
         self.pushButton.setStyleSheet("QPushButton{\n"
                        "    background-color: rgb(170, 170, 170);\n"
@@ -1266,21 +1288,24 @@ class Ui_MainWindow(object):
 
                         if (self.checkBox.isChecked()):
                                 os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
-
                                 dfleitor = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv', encoding='ansi',
                                                        sep=";")
                                 if(dfleitor.iloc[0][2]==0):
                                         fluxo.window_variavel()
                                         MainWindow.close()
                                 else:
-                                        fluxo.window_investir2()
+                                        fluxo.window_investir2b()
                                         MainWindow.close()
-
                         else:
                                 fluxo.window_fim()
                                 os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
                                 #download_funcoesRV()
                                 MainWindow.close()
+
+    def estudar(self):
+            MainWindow.close()
+            fluxo.window_investir()
+            fluxo.window_fixa()
 
 
 import files_rc

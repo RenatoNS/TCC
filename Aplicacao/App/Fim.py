@@ -217,11 +217,12 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "OK"))
 
     def fim(self):
+        os.remove('C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv')
         MainWindow.close()
 
 
 import sys
-
+import os
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
 ui = Ui_MainWindow()

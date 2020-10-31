@@ -179,9 +179,18 @@ class Ui_MainWindow(object):
                     perfil_atual = perfil[index]
                     pdperfil = pd.DataFrame([perfil_atual], columns =["perfil"])
                     pdperfil.to_csv("perfil_temp.csv", encoding='utf-8', sep=";")
+                    login=list(frame["Login"])
+                    lidorv=list(frame["lidorv"])
+                    lidorf=list(frame["lidorf"])
+                    pdleitura = pd.DataFrame([[login[index], lidorv[index]]] ,columns =["login","lidorv"])
+                    pdleitura.to_csv("leitor_temp.csv", encoding='utf-8', sep=";")
                     fluxo = Fluxo()
-                    fluxo.window_fixa()
-                    MainWindow.close()
+                    if(lidorf[index]==0):
+                        fluxo.window_fixa()
+                        MainWindow.close()
+                    else:
+                        fluxo.window_investir1b()
+                        MainWindow.close()
 
                 else:
                     self.label_error.setStyleSheet("QLabel { color: red}")
