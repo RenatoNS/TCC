@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import os
+import time
 
 os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
 
@@ -57,6 +58,8 @@ class Conexao:
         frame = pd.DataFrame(informacoes, columns=columns)
         frame["lidorf"]=0
         frame["lidorv"]=0
+        frame["mes_criacao"]=time.strftime('%m')
+        frame["ano_criacao"]=time.strftime('%y')
         frame.to_csv("Clientes.csv", sep=";", encoding='ansi')
         os.remove('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv')
 
@@ -79,6 +82,8 @@ class Conexao:
         respostas.append(perfil)
         respostas.append(0)
         respostas.append(0)
+        respostas.append(time.strftime('%m'))
+        respostas.append(time.strftime('%y'))
         informacoes = [respostas]
         columns = ["Qual sua faixa etária",
                    "Qual percentual do seu patrimônio está investido? (Carros, casas, ações, etc)",
@@ -94,7 +99,9 @@ class Conexao:
                    "Senha",
                    "Perfil",
                    "lidorf",
-                   "lidorv"]
+                   "lidorv",
+                   "mes_criacao",
+                   "ano_criacao"]
         frame = pd.DataFrame(informacoes, columns=columns)
         frame.to_csv("Clientes1.csv", sep=";", encoding='ansi')
         framelogin = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv', encoding='ansi', sep=";", index_col=0)

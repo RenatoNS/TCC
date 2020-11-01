@@ -3,6 +3,8 @@ from PyQt5.QtGui import *
 import pandas as pd
 from Fluxo import Fluxo
 from Comunicacao import Conexao
+import time
+import os
 
 
 class Ui_MainWindow(object):
@@ -176,21 +178,53 @@ class Ui_MainWindow(object):
                 senha = list(frame["Senha"])
                 perfil = list(frame["Perfil"])
                 if (self.senha_lineEdit.text()==senha[index]):
-                    perfil_atual = perfil[index]
-                    pdperfil = pd.DataFrame([perfil_atual], columns =["perfil"])
-                    pdperfil.to_csv("perfil_temp.csv", encoding='utf-8', sep=";")
-                    login=list(frame["Login"])
-                    lidorv=list(frame["lidorv"])
-                    lidorf=list(frame["lidorf"])
-                    pdleitura = pd.DataFrame([[login[index], lidorv[index]]] ,columns =["login","lidorv"])
-                    pdleitura.to_csv("leitor_temp.csv", encoding='utf-8', sep=";")
+                    mes = list(frame["mes_criacao"])
+                    ano = list(frame["ano_criacao"])
                     fluxo = Fluxo()
-                    if(lidorf[index]==0):
-                        fluxo.window_fixa()
-                        MainWindow.close()
+                    if(int(ano[index])!=int(time.strftime('%y'))):
+                        if(int(time.strftime('%m'))>=int(mes[index])):
+                            login = list(frame["Login"])
+                            checker.criar_login(login[index], senha[index])
+                            frame = frame.drop([0])
+                            print(frame)
+                            print(index)
+                            os.remove('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv')
+                            frame.to_csv("Clientes.csv", sep=";", encoding='ansi', index=False)
+                            fluxo.window_formulario()
+                            MainWindow.close()
+
+                        else:
+                            perfil_atual = perfil[index]
+                            pdperfil = pd.DataFrame([perfil_atual], columns=["perfil"])
+                            pdperfil.to_csv("perfil_temp.csv", encoding='utf-8', sep=";")
+                            login = list(frame["Login"])
+                            lidorv = list(frame["lidorv"])
+                            lidorf = list(frame["lidorf"])
+                            pdleitura = pd.DataFrame([[login[index], lidorv[index]]], columns=["login", "lidorv"])
+                            pdleitura.to_csv("leitor_temp.csv", encoding='utf-8', sep=";")
+                            if (lidorf[index] == 0):
+                                fluxo.window_fixa()
+                                MainWindow.close()
+                            else:
+                                fluxo.window_investir1b()
+                                MainWindow.close()
+
                     else:
-                        fluxo.window_investir1b()
-                        MainWindow.close()
+                        perfil_atual = perfil[index]
+                        pdperfil = pd.DataFrame([perfil_atual], columns =["perfil"])
+                        pdperfil.to_csv("perfil_temp.csv", encoding='utf-8', sep=";")
+                        login=list(frame["Login"])
+                        lidorv=list(frame["lidorv"])
+                        lidorf=list(frame["lidorf"])
+                        pdleitura = pd.DataFrame([[login[index], lidorv[index]]] ,columns =["login","lidorv"])
+                        pdleitura.to_csv("leitor_temp.csv", encoding='utf-8', sep=";")
+                        if(lidorf[index]==0):
+                            fluxo.window_fixa()
+                            MainWindow.close()
+                        else:
+                            fluxo.window_investir1b()
+                            MainWindow.close()
+
 
                 else:
                     self.label_error.setStyleSheet("QLabel { color: red}")

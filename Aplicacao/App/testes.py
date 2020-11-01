@@ -1,6 +1,12 @@
 import pandas as pd
-import os
+import time
 
-dfleitor = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv', encoding='ansi',
-                       sep=";")
-print(dfleitor.iloc[0][2] == 1)
+frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi', sep=";")
+index = 0
+senha = list(frame["Senha"])
+perfil = list(frame["Perfil"])
+mes = list(frame["mes_criacao"])
+ano = list(frame["ano_criacao"])
+
+print(10 != 10 & 8 >= 8)
+
