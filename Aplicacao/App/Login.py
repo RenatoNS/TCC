@@ -172,7 +172,7 @@ class Ui_MainWindow(object):
             self.label_error.setStyleSheet("QLabel { color: red}")
 
         else:
-            frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi', sep=";")
+            frame = pd.read_csv("C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv", encoding='ansi', sep=";")
             strlist = []
             for inteiro in list(frame["Login"]):
                 strlist.append(str(inteiro))
@@ -191,7 +191,7 @@ class Ui_MainWindow(object):
                         if(int(time.strftime('%m'))>=int(mes[index])):
                             checker.criar_login(strlist[index], strsenha[index])
                             frame = frame.drop([0])
-                            os.remove('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv')
+                            os.remove("C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv")
                             frame.to_csv("Clientes.csv", sep=";", encoding='ansi', index=False)
                             fluxo.window_formulario()
                             MainWindow.close()

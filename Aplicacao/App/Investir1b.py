@@ -12,7 +12,7 @@ from Fluxo import Fluxo
 import pandas as pd
 from FuncoesRendaFixa import consulta_opcoes_CDB, consulta_opcoes_LCI, consulta_opcoes_LCA, consulta_opcoes_tesouro,download_opcoesRF, criar_resultado_RF_excel
 import os
-os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
+os.chdir("C:\TCC\Aplicacao\Arquivos CSV")
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1203,7 +1203,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Investir"))
         self.label.setText(_translate("MainWindow", "Seu perfil é"))
-        frameperfil = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv', encoding='ansi', sep=";",
+        frameperfil = pd.read_csv("C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv", encoding='ansi', sep=";",
                                   index_col=0)
         perfil = list(frameperfil["perfil"])
         perfil = perfil[0]
@@ -1289,8 +1289,8 @@ class Ui_MainWindow(object):
                         criar_resultado_RF_excel()
 
                         if (self.checkBox.isChecked()):
-                                os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
-                                dfleitor = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv', encoding='ansi',
+                                os.remove("C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv")
+                                dfleitor = pd.read_csv("C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv", encoding='ansi',
                                                        sep=";")
                                 if(dfleitor.iloc[0][2]==0):
                                         fluxo.window_variavel()
@@ -1300,7 +1300,7 @@ class Ui_MainWindow(object):
                                         MainWindow.close()
                         else:
                                 fluxo.window_fim()
-                                os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
+                                os.remove("C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv")
                                 MainWindow.close()
 
     def estudar(self):

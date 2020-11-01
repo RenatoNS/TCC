@@ -104,9 +104,9 @@ class Conexao:
                    "ano_criacao"]
         frame = pd.DataFrame(informacoes, columns=columns)
         frame.to_csv("Clientes1.csv", sep=";", encoding='ansi')
-        framelogin = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv', encoding='ansi', sep=";", index_col=0)
+        framelogin = pd.read_csv("C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv", encoding='ansi', sep=";", index_col=0)
         frames = pd.concat([frameclientes, framelogin], ignore_index=True)
         frames.to_csv("Clientes.csv", sep=";", encoding='ansi')
 
-        os.remove('C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv')
-        os.remove('C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv')
+        os.remove("C:\TCC\Aplicacao\Arquivos CSV\Clientes1.csv")
+        os.remove("C:\TCC\Aplicacao\Arquivos CSV\Login_temp.csv")

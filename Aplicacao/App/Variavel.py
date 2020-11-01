@@ -709,11 +709,11 @@ class Ui_MainWindow(object):
                 if (condition1 & condition2 & condition3 & condition4):
                         self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
                         if (self.checkBox.isChecked() == True):
-                                df = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi',
+                                df = pd.read_csv("C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv", encoding='ansi',
                                                  sep=";")
-                                dfleitor = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv', encoding='ansi',
+                                dfleitor = pd.read_csv("C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv', encoding='ansi",
                                                        sep=";")
-                                os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
+                                os.chdir("C:\TCC\Aplicacao\Arquivos CSV")
                                 strlist = []
                                 for inteiro in list(df["Login"]):
                                         strlist.append(str(inteiro))

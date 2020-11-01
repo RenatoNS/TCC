@@ -228,7 +228,7 @@ class Ui_MainWindow(object):
             MainWindow.close()
 
         else:
-            frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi', sep=";")
+            frame = pd.read_csv("C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv", encoding='ansi', sep=';')
             if(self.lineEdit_cadastro_usuario.text() in list(frame["Login"])):
                 self.label_error1.setStyleSheet("QLabel { color: red}")
 
