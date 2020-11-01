@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Fluxo import Fluxo
 from FuncaoRendaVariavel import download_opcoesRV
 import os
-os.chdir("C:\TCC\Aplicacao\Arquivos CSV")
+os.chdir('C:\TCC\Aplicacao\Arquivos CSV')
 
 
 
