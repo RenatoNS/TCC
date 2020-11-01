@@ -213,22 +213,4 @@ def criar_resultado_RF_excel():
     return
     
 
-#%% Definir diretorio para salvar os dados
-
-os.chdir(r'C:\TCC')
-# os.getcwd()
-
-#%% Execucao
-
-download_opcoesRF()
-
-# Exemplos de execucao
-#consulta_opcoes_CDB('12/02/2022', 5000)
-#consulta_opcoes_LCI('12/02/2021', 12000)
-#consulta_opcoes_LCA('12/02/2021', 12000)
-#consulta_opcoes_tesouro('12/02/2035', 12000)
-
-criar_resultado_RF_excel()
-
-
  

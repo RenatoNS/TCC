@@ -10,6 +10,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Fluxo import Fluxo
+from FuncaoRendaVariavel import download_opcoesRV
+import os
+os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
+
 
 
 class Ui_MainWindow(object):
@@ -17,6 +21,9 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(666, 700)
         MainWindow.setMinimumSize(QtCore.QSize(500, 700))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icone_janela/icone_janela.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgb(42, 42, 42);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -430,7 +437,7 @@ class Ui_MainWindow(object):
 "portando é dever do investidor pesquisar \n"
 "muito bem antes de comprar qualquer produto"))
         self.label_3.setText(_translate("MainWindow", "   Os papéis recomendados neste aplicativo são apenas uma reprodução do site:  \n"
-"https://conteudos.xpi.com.br/acoes/carteiras/top-10-acoes-xp-outubro-de-2020 \n"
+"                                https://conteudos.xpi.com.br/acoes/carteiras \n"
 "   e não são garantias de lucro, apenas um conselho para novos investidores.  \n"
 "    \n"
 "         Antes de qualquer compra é necessário estudar as empresas listadas."))
@@ -440,6 +447,7 @@ class Ui_MainWindow(object):
 
 
     def concluir(self):
+        download_opcoesRV()
         fluxo = Fluxo()
         fluxo.window_fim()
         MainWindow.close()

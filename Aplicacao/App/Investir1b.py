@@ -10,16 +10,18 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Fluxo import Fluxo
 import pandas as pd
-from download_google_drive_funcoes import consulta_opcoes_CDB, consulta_opcoes_LCI, consulta_opcoes_LCA, consulta_opcoes_tesouro,download_opcoesRF,criar_resultado_RF_excel
+from FuncoesRendaFixa import consulta_opcoes_CDB, consulta_opcoes_LCI, consulta_opcoes_LCA, consulta_opcoes_tesouro,download_opcoesRF, criar_resultado_RF_excel
 import os
 os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
-from funcao_renda_variavel import download_opcoesRV
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(666, 700)
         MainWindow.setMinimumSize(QtCore.QSize(500, 700))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icone_janela/icone_janela.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgb(42, 42, 42);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -1299,7 +1301,6 @@ class Ui_MainWindow(object):
                         else:
                                 fluxo.window_fim()
                                 os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
-                                #download_funcoesRV()
                                 MainWindow.close()
 
     def estudar(self):

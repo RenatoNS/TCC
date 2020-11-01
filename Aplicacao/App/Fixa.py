@@ -16,7 +16,10 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(666, 700)
-        MainWindow.setMinimumSize(QtCore.QSize(500, 700))
+        MainWindow.setMinimumSize(QtCore.QSize(666, 700))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icone_janela/icone_janela.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgb(42, 42, 42);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -35,7 +38,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.conteudo)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.Fixa = QtWidgets.QFrame(self.conteudo)
-        self.Fixa.setMaximumSize(QtCore.QSize(10000, 10000))
+        self.Fixa.setMaximumSize(QtCore.QSize(666, 700))
         self.Fixa.setStyleSheet("background-color: rgb(60, 60, 60);\n"
 "border-radius: 10px;")
         self.Fixa.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -198,7 +201,7 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton_6 = QtWidgets.QPushButton(self.conteudo)
+        self.pushButton_6 = QtWidgets.QPushButton(self.Fixa)
         self.pushButton_6.clicked.connect(self.avancar)
         self.pushButton_6.setStyleSheet("background-color: rgb(170, 170, 170);\n"
                                       "border: 2px solid rgb(180, 180, 180);\n"
@@ -256,7 +259,9 @@ class Ui_MainWindow(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout_2.addWidget(self.pushButton_2)
         self.pushButton_5 = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.pushButton_5.clicked.connect(self.indexadores)
+        self.pushButton_5.clicked.connect(self.FGC)
+        self.pushButton_7 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_7.clicked.connect(self.indexadores)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -269,7 +274,20 @@ class Ui_MainWindow(object):
 "\n"
 "")
         self.pushButton_5.setObjectName("pushButton_5")
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_7.setFont(font)
+        self.pushButton_7.setStyleSheet("background-color: rgb(170, 170, 170);\n"
+                                        "border: 2px solid rgb(180, 180, 180);\n"
+                                        "border-radius: 5px;\n"
+                                        "\n"
+                                        "")
+        self.pushButton_7.setObjectName("pushButton_7")
         self.verticalLayout_2.addWidget(self.pushButton_5)
+        self.verticalLayout_2.addWidget(self.pushButton_7)
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.Fixa)
         self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(100, 250, 301, 141))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
@@ -418,6 +436,7 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName("label_6")
         self.verticalLayout_3.addWidget(self.label_6)
         self.label_8 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.label_9 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -456,6 +475,7 @@ class Ui_MainWindow(object):
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
         self.label_8.setPalette(palette)
+        self.label_9.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -464,6 +484,9 @@ class Ui_MainWindow(object):
         self.label_8.setFont(font)
         self.label_8.setObjectName("label_8")
         self.verticalLayout_3.addWidget(self.label_8)
+        self.label_9.setFont(font)
+        self.label_9.setObjectName("label_9")
+        self.verticalLayout_3.addWidget(self.label_9)
         self.label_7 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -570,6 +593,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Fixa"))
@@ -588,11 +612,13 @@ class Ui_MainWindow(object):
         self.pushButton_4.setText(_translate("MainWindow", "Ler"))
         self.pushButton_2.setText(_translate("MainWindow", "Ler"))
         self.pushButton_5.setText(_translate("MainWindow", "Ler"))
+        self.pushButton_7.setText(_translate("MainWindow", "Ler"))
         self.pushButton_6.setText(_translate("MainWindow", "Avancar"))
-        self.label_3.setText(_translate("MainWindow", " Certificado de Depósito Bancário - CDB"))
+        self.label_3.setText(_translate("MainWindow", "Certificado de Depósito Bancário - CDB"))
         self.label_5.setText(_translate("MainWindow", "Letra de Crédito Imobiliário - LCI"))
         self.label_6.setText(_translate("MainWindow", "Letra de Crédito do Agronegócio - LCA"))
         self.label_8.setText(_translate("MainWindow", "Tesouro Direto"))
+        self.label_9.setText(_translate("MainWindow", "Fundo Garantidor de Crédito - FGC"))
         self.label_7.setText(_translate("MainWindow", "Principais Indexadores"))
         self.label_2.setText(_translate("MainWindow", "É necessário ler todos os tópicos antes de prosseguir"))
         self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
@@ -682,6 +708,23 @@ class Ui_MainWindow(object):
                                       "    border: 2px solid rgb(16, 5, 136);\n"
                                       "    color: rgb(255, 255, 255);\n"
                                       "}")
+        self.pushButton_7.setStyleSheet("QPushButton{\n"
+                                      "    background-color: rgb(170, 170, 170);\n"
+                                      "    border: 2px solid rgb(180, 180, 180);\n"
+                                      "    border-radius: 5px;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover{\n"
+                                      "    background-color: rgb(180, 180, 180);\n"
+                                      "    border: 2px solid rgb(190, 190, 190);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed{\n"
+                                      "    \n"
+                                      "    background-color: rgb(16, 5, 136);\n"
+                                      "    border: 2px solid rgb(16, 5, 136);\n"
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "}")
         self.pushButton_6.setStyleSheet("QPushButton{\n"
                                       "    background-color: rgb(170, 170, 170);\n"
                                       "    border: 2px solid rgb(180, 180, 180);\n"
@@ -740,6 +783,15 @@ class Ui_MainWindow(object):
             condition5 = True
             fluxo.window_indexadores()
 
+    def FGC(self):
+            self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
+            self.label_9.setStyleSheet("QLabel { color: green}")
+            global condition6
+            condition6 = True
+            fluxo.window_FGC()
+
+
 
     def avancar(self):
             if (self.checkBox.isChecked() == True):
@@ -748,7 +800,7 @@ class Ui_MainWindow(object):
                 self.label_11.setStyleSheet("QLabel { color: red}")
 
             try:
-                if(condition1 & condition2 & condition3 & condition4 & condition5):
+                if(condition1 & condition2 & condition3 & condition4 & condition5 & condition6):
                         self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
                         if(self.checkBox.isChecked()==True):
                                 df = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi',
@@ -756,9 +808,10 @@ class Ui_MainWindow(object):
                                 dfleitor = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv', encoding='ansi',
                                                  sep=";")
                                 os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
-                                print("a")
-                                index = (list(df["Login"])).index(str(dfleitor.iloc[0][1]))
-                                print("b")
+                                strlist = []
+                                for inteiro in list(df["Login"]):
+                                        strlist.append(str(inteiro))
+                                index = strlist.index(str(dfleitor.iloc[0][1]))
                                 df["lidorf"][index] = 1
                                 df.to_csv("Clientes.csv", sep=";", encoding='ansi', index=False)
                                 self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")

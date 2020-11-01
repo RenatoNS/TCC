@@ -4,12 +4,7 @@ import gdown
 import pandas as pd
 import os
 
- #%%
 
-os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
-
-#%%
- 
 def download_opcoesRV():
     try:
         url = 'https://drive.google.com/uc?id=1qwx-7R3fT4n2488xpg9m24uSy0dcQVFD'
@@ -21,8 +16,4 @@ def download_opcoesRV():
         os.remove('carteiraRV.csv')
     except:
         pass
-    return
 
-#%%
-    
-download_opcoesRV()

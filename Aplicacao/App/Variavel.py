@@ -17,7 +17,10 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(666, 700)
-        MainWindow.setMinimumSize(QtCore.QSize(500, 700))
+        MainWindow.setMinimumSize(QtCore.QSize(666, 700))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icone_janela/icone_janela.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgb(42, 42, 42);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -36,7 +39,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.conteudo)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.Variavel = QtWidgets.QFrame(self.conteudo)
-        self.Variavel.setMaximumSize(QtCore.QSize(10000, 10000))
+        self.Variavel.setMaximumSize(QtCore.QSize(666, 700))
         self.Variavel.setStyleSheet("background-color: rgb(60, 60, 60);\n"
 "border-radius: 10px;")
         self.Variavel.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -711,11 +714,13 @@ class Ui_MainWindow(object):
                                 dfleitor = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\leitor_temp.csv', encoding='ansi',
                                                        sep=";")
                                 os.chdir(r'C:\TCC\Aplicacao\Arquivos CSV')
-                                index = (list(df["Login"])).index(str(dfleitor.iloc[0][1]))
+                                strlist = []
+                                for inteiro in list(df["Login"]):
+                                        strlist.append(str(inteiro))
+                                index = strlist.index(str(dfleitor.iloc[0][1]))
                                 df["lidorv"][index] = 1
                                 df.to_csv("Clientes.csv", sep=";", encoding='ansi', index=False)
                                 self.label_2.setStyleSheet("QLabel { color: rgb(60,60,60)}")
-                              #  os.remove('C:\TCC\Aplicacao\Arquivos CSV\perfil_temp.csv')
                                 fluxo.window_investir2()
                                 MainWindow.close()
         except:

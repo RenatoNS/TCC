@@ -173,21 +173,24 @@ class Ui_MainWindow(object):
 
         else:
             frame = pd.read_csv('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv', encoding='ansi', sep=";")
-            if(self.usuario_lineEdit.text() in list(frame["Login"])):
-                index = (list(frame["Login"])).index(self.usuario_lineEdit.text())
-                senha = list(frame["Senha"])
+            strlist = []
+            for inteiro in list(frame["Login"]):
+                strlist.append(str(inteiro))
+
+            if(self.usuario_lineEdit.text() in strlist):
+                index = strlist.index(self.usuario_lineEdit.text())
+                strsenha = []
+                for inteiro2 in list(frame["Senha"]):
+                    strsenha.append(str(inteiro2))
                 perfil = list(frame["Perfil"])
-                if (self.senha_lineEdit.text()==senha[index]):
+                if (self.senha_lineEdit.text()==strsenha[index]):
                     mes = list(frame["mes_criacao"])
                     ano = list(frame["ano_criacao"])
                     fluxo = Fluxo()
                     if(int(ano[index])!=int(time.strftime('%y'))):
                         if(int(time.strftime('%m'))>=int(mes[index])):
-                            login = list(frame["Login"])
-                            checker.criar_login(login[index], senha[index])
+                            checker.criar_login(strlist[index], strsenha[index])
                             frame = frame.drop([0])
-                            print(frame)
-                            print(index)
                             os.remove('C:\TCC\Aplicacao\Arquivos CSV\Clientes.csv')
                             frame.to_csv("Clientes.csv", sep=";", encoding='ansi', index=False)
                             fluxo.window_formulario()
@@ -200,7 +203,7 @@ class Ui_MainWindow(object):
                             login = list(frame["Login"])
                             lidorv = list(frame["lidorv"])
                             lidorf = list(frame["lidorf"])
-                            pdleitura = pd.DataFrame([[login[index], lidorv[index]]], columns=["login", "lidorv"])
+                            pdleitura = pd.DataFrame([[strlist[index], lidorv[index]]], columns=["login", "lidorv"])
                             pdleitura.to_csv("leitor_temp.csv", encoding='utf-8', sep=";")
                             if (lidorf[index] == 0):
                                 fluxo.window_fixa()
