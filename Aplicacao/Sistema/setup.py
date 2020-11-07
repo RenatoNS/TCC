@@ -4,4 +4,4 @@ setup(
         name = "MoneyMS",
         version = "0.9",
         description = "Investimentos Financeiros",
-        executables = [Executable('MoneyMS.py', base = "Win32GUI")])
+        executables = [Executable('MoneyMS.py', base = "Win32GUI", icon = "icone_janela.ico")])
