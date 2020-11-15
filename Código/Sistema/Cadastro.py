@@ -195,7 +195,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Login"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Cadastro"))
         self.lineEdit_cadastro_usuario.setPlaceholderText(_translate("MainWindow", "Usuário"))
         self.lineEdit_cadastro_senha.setPlaceholderText(_translate("MainWindow", "Senha"))
         self.btn_cadastro_cadastrar.setText(_translate("MainWindow", "Cadastrar"))

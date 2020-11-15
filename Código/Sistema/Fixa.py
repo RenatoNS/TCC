@@ -613,7 +613,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(_translate("MainWindow", "Ler"))
         self.pushButton_5.setText(_translate("MainWindow", "Ler"))
         self.pushButton_7.setText(_translate("MainWindow", "Ler"))
-        self.pushButton_6.setText(_translate("MainWindow", "Avancar"))
+        self.pushButton_6.setText(_translate("MainWindow", "Avançar"))
         self.label_3.setText(_translate("MainWindow", "Certificado de Depósito Bancário - CDB"))
         self.label_5.setText(_translate("MainWindow", "Letra de Crédito Imobiliário - LCI"))
         self.label_6.setText(_translate("MainWindow", "Letra de Crédito do Agronegócio - LCA"))

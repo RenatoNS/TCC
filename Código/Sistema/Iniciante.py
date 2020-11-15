@@ -333,7 +333,7 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:40pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt; vertical-align:super;\">A Bolsa de Valores é um tipo de mercado em que investidores podem negociar títulos e ações de empresas de capital aberto públicas ou privadas. Essa compra e venda de ações é intermediada por corretoras de valores especializadas, que auxiliam os investidores ao longo do processo.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt; vertical-align:super;\">A principal função da Bolsa é organizar o ambiente das negociações, além de “guardar” em segurança todas as ações. Assim, sempre que um investidor comprar ações ou decidir revendê-las, a transição será feita nesse ambiente de forma sistemática.</span></p></body></html>"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab1), _translate("MainWindow", "Por Que Analisar uma Função?"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab1), _translate("MainWindow", "Por Que Analisar uma Ação?"))
         self.textBrowser_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

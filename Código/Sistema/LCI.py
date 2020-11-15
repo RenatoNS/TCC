@@ -277,7 +277,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "LCI"))
-        self.label.setText(_translate("MainWindow", "LCI - Letras de Crédito do Imobiliário"))
+        self.label.setText(_translate("MainWindow", "LCI - Letras de Crédito Imobiliário"))
         self.label_2.setText(_translate("MainWindow", "O Que Saber?"))
         self.textBrowser_3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -289,7 +289,7 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt; vertical-align:super;\">Ou seja, o investimento em Letra de Crédito Imobiliário não possui volatilidade (variação), como as ações ou os fundos imobiliários (FIIs) negociados na bolsa de valores. Afinal, o valor da letra de crédito não varia ao longo tempo, porque o rendimento está definido na contratação da aplicação</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt; vertical-align:super;\">Por fim, vale ressaltar que quando o investidor aplica em uma LCI isso não significa que o dinheiro está indo diretamente para aquele que está financiando um imóvel. Na verdade, o capital da aplicação é captado por uma instituição financeira que, por sua vez, direciona o recurso para clientes do ramo imobiliário.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:28pt; vertical-align:super;\"><br /></p></body></html>"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab1), _translate("MainWindow", "O Que Preciso saber para começar?"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab1), _translate("MainWindow", "O que Preciso Saber Para Começar?"))
         self.textBrowser_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
