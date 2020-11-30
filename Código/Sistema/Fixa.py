@@ -814,7 +814,6 @@ class Ui_MainWindow(object):
                                 df.to_csv("Clientes.csv", sep=";", encoding='ansi', index=False)
                                 self.label_11.setStyleSheet("QLabel { color: rgb(60,60,60)}")
                                 fluxo.window_investir()
-                                print("b")
                                 MainWindow.close()
             except:
                 self.label_2.setStyleSheet("QLabel { color: red}")

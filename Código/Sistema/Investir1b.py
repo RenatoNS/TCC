@@ -1297,9 +1297,11 @@ class Ui_MainWindow(object):
                                 dfleitor = pd.read_csv('../Controle/leitor_temp.csv', encoding='ansi',
                                                        sep=";")
                                 if(dfleitor.iloc[0][2]==0):
+
                                         fluxo.window_variavel()
                                         MainWindow.close()
                                 else:
+                                        print("a")
                                         fluxo.window_investir2b()
                                         MainWindow.close()
                         else:
@@ -1309,7 +1311,6 @@ class Ui_MainWindow(object):
 
     def estudar(self):
             MainWindow.close()
-            fluxo.window_investir()
             fluxo.window_fixa()
 
 
